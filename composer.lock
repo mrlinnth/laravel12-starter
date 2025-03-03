@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6899c6c915c0935dff97c54c26137b83",
+    "content-hash": "a0dbb418f99d51f1a16da5b6cac189ee",
     "packages": [
         {
             "name": "brick/math",
@@ -136,6 +136,166 @@
             "time": "2024-02-09T16:56:22+00:00"
         },
         {
+            "name": "composer/pcre",
+            "version": "3.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/pcre.git",
+                "reference": "b2bed4734f0cc156ee1fe9c0da2550420d99a21e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/b2bed4734f0cc156ee1fe9c0da2550420d99a21e",
+                "reference": "b2bed4734f0cc156ee1fe9c0da2550420d99a21e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan": "<1.11.10"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.12 || ^2",
+                "phpstan/phpstan-strict-rules": "^1 || ^2",
+                "phpunit/phpunit": "^8 || ^9"
+            },
+            "type": "library",
+            "extra": {
+                "phpstan": {
+                    "includes": [
+                        "extension.neon"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Pcre\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "PCRE wrapping library that offers type-safe preg_* replacements.",
+            "keywords": [
+                "PCRE",
+                "preg",
+                "regex",
+                "regular expression"
+            ],
+            "support": {
+                "issues": "https://github.com/composer/pcre/issues",
+                "source": "https://github.com/composer/pcre/tree/3.3.2"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-11-12T16:29:46+00:00"
+        },
+        {
+            "name": "composer/semver",
+            "version": "3.4.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/semver.git",
+                "reference": "4313d26ada5e0c4edfbd1dc481a92ff7bff91f12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/semver/zipball/4313d26ada5e0c4edfbd1dc481a92ff7bff91f12",
+                "reference": "4313d26ada5e0c4edfbd1dc481a92ff7bff91f12",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.11",
+                "symfony/phpunit-bridge": "^3 || ^7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\Semver\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nils Adermann",
+                    "email": "naderman@naderman.de",
+                    "homepage": "http://www.naderman.de"
+                },
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                },
+                {
+                    "name": "Rob Bast",
+                    "email": "rob.bast@gmail.com",
+                    "homepage": "http://robbast.nl"
+                }
+            ],
+            "description": "Semver library that offers utilities, version constraint parsing and validation.",
+            "keywords": [
+                "semantic",
+                "semver",
+                "validation",
+                "versioning"
+            ],
+            "support": {
+                "irc": "ircs://irc.libera.chat:6697/composer",
+                "issues": "https://github.com/composer/semver/issues",
+                "source": "https://github.com/composer/semver/tree/3.4.3"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-09-19T14:15:21+00:00"
+        },
+        {
             "name": "dflydev/dot-access-data",
             "version": "v3.0.3",
             "source": {
@@ -209,6 +369,157 @@
                 "source": "https://github.com/dflydev/dflydev-dot-access-data/tree/v3.0.3"
             },
             "time": "2024-07-08T12:26:09+00:00"
+        },
+        {
+            "name": "doctrine/dbal",
+            "version": "4.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/dbal.git",
+                "reference": "19a2b7deb5fe8c2df0ff817ecea305e50acb62ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/19a2b7deb5fe8c2df0ff817ecea305e50acb62ec",
+                "reference": "19a2b7deb5fe8c2df0ff817ecea305e50acb62ec",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/deprecations": "^0.5.3|^1",
+                "php": "^8.1",
+                "psr/cache": "^1|^2|^3",
+                "psr/log": "^1|^2|^3"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "12.0.0",
+                "fig/log-test": "^1",
+                "jetbrains/phpstorm-stubs": "2023.2",
+                "phpstan/phpstan": "2.1.1",
+                "phpstan/phpstan-phpunit": "2.0.3",
+                "phpstan/phpstan-strict-rules": "^2",
+                "phpunit/phpunit": "10.5.39",
+                "slevomat/coding-standard": "8.13.1",
+                "squizlabs/php_codesniffer": "3.10.2",
+                "symfony/cache": "^6.3.8|^7.0",
+                "symfony/console": "^5.4|^6.3|^7.0"
+            },
+            "suggest": {
+                "symfony/console": "For helpful console commands such as SQL execution and import of files."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\DBAL\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Powerful PHP database abstraction layer (DBAL) with many features for database schema introspection and management.",
+            "homepage": "https://www.doctrine-project.org/projects/dbal.html",
+            "keywords": [
+                "abstraction",
+                "database",
+                "db2",
+                "dbal",
+                "mariadb",
+                "mssql",
+                "mysql",
+                "oci8",
+                "oracle",
+                "pdo",
+                "pgsql",
+                "postgresql",
+                "queryobject",
+                "sasql",
+                "sql",
+                "sqlite",
+                "sqlserver",
+                "sqlsrv"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/dbal/issues",
+                "source": "https://github.com/doctrine/dbal/tree/4.2.2"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdbal",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-01-16T08:40:56+00:00"
+        },
+        {
+            "name": "doctrine/deprecations",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/deprecations.git",
+                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/31610dbb31faa98e6b5447b62340826f54fbc4e9",
+                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9 || ^12",
+                "phpstan/phpstan": "1.4.10 || 2.0.3",
+                "phpstan/phpstan-phpunit": "^1.0 || ^2",
+                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
+                "psr/log": "^1 || ^2 || ^3"
+            },
+            "suggest": {
+                "psr/log": "Allows logging deprecations via PSR-3 logger implementation"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Deprecations\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A small layer on top of trigger_error(E_USER_DEPRECATED) or PSR-3 logging with options to disable all deprecations or selectively for packages.",
+            "homepage": "https://www.doctrine-project.org/",
+            "support": {
+                "issues": "https://github.com/doctrine/deprecations/issues",
+                "source": "https://github.com/doctrine/deprecations/tree/1.1.4"
+            },
+            "time": "2024-12-07T21:18:45+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -509,6 +820,67 @@
                 }
             ],
             "time": "2024-12-27T00:36:43+00:00"
+        },
+        {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "cb56001e54359df7ae76dc522d08845dc741621b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/cb56001e54359df7ae76dc522d08845dc741621b",
+                "reference": "cb56001e54359df7ae76dc522d08845dc741621b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "~5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
+            },
+            "require-dev": {
+                "cerdic/css-tidy": "^1.7 || ^2.0",
+                "simpletest/simpletest": "dev-master"
+            },
+            "suggest": {
+                "cerdic/css-tidy": "If you want to use the filter 'Filter.ExtractStyleBlocks'.",
+                "ext-bcmath": "Used for unit conversion and imagecrash protection",
+                "ext-iconv": "Converts text to and from non-UTF-8 encodings",
+                "ext-tidy": "Used for pretty-printing HTML"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ],
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "exclude-from-classmap": [
+                    "/library/HTMLPurifier/Language/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "support": {
+                "issues": "https://github.com/ezyang/htmlpurifier/issues",
+                "source": "https://github.com/ezyang/htmlpurifier/tree/v4.18.0"
+            },
+            "time": "2024-11-01T03:51:45+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -1403,6 +1775,70 @@
             "time": "2025-02-11T13:34:40+00:00"
         },
         {
+            "name": "laravel/sanctum",
+            "version": "v4.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sanctum.git",
+                "reference": "ec1dd9ddb2ab370f79dfe724a101856e0963f43c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/ec1dd9ddb2ab370f79dfe724a101856e0963f43c",
+                "reference": "ec1dd9ddb2ab370f79dfe724a101856e0963f43c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/console": "^11.0|^12.0",
+                "illuminate/contracts": "^11.0|^12.0",
+                "illuminate/database": "^11.0|^12.0",
+                "illuminate/support": "^11.0|^12.0",
+                "php": "^8.2",
+                "symfony/console": "^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^9.0|^10.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^11.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Sanctum\\SanctumServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Sanctum\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Laravel Sanctum provides a featherweight authentication system for SPAs and simple APIs.",
+            "keywords": [
+                "auth",
+                "laravel",
+                "sanctum"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/sanctum/issues",
+                "source": "https://github.com/laravel/sanctum"
+            },
+            "time": "2025-01-26T19:34:36+00:00"
+        },
+        {
             "name": "laravel/serializable-closure",
             "version": "v2.0.3",
             "source": {
@@ -1462,6 +1898,75 @@
                 "source": "https://github.com/laravel/serializable-closure"
             },
             "time": "2025-02-11T15:03:05+00:00"
+        },
+        {
+            "name": "laravel/telescope",
+            "version": "v5.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/telescope.git",
+                "reference": "2594b20b946155ba767002d8af971e33e1095637"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/2594b20b946155ba767002d8af971e33e1095637",
+                "reference": "2594b20b946155ba767002d8af971e33e1095637",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/framework": "^8.37|^9.0|^10.0|^11.0|^12.0",
+                "php": "^8.0",
+                "symfony/console": "^5.3|^6.0|^7.0",
+                "symfony/var-dumper": "^5.0|^6.0|^7.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "laravel/octane": "^1.4|^2.0|dev-develop",
+                "orchestra/testbench": "^6.40|^7.37|^8.17|^9.0|^10.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^9.0|^10.5|^11.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Telescope\\TelescopeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Telescope\\": "src/",
+                    "Laravel\\Telescope\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "mohamed@laravel.com"
+                }
+            ],
+            "description": "An elegant debug assistant for the Laravel framework.",
+            "keywords": [
+                "debugging",
+                "laravel",
+                "monitoring"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/telescope/issues",
+                "source": "https://github.com/laravel/telescope/tree/v5.5.0"
+            },
+            "time": "2025-02-11T15:01:27+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2081,6 +2586,272 @@
             "time": "2024-12-08T08:18:47+00:00"
         },
         {
+            "name": "maatwebsite/excel",
+            "version": "3.1.64",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SpartnerNL/Laravel-Excel.git",
+                "reference": "e25d44a2d91da9179cd2d7fec952313548597a79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SpartnerNL/Laravel-Excel/zipball/e25d44a2d91da9179cd2d7fec952313548597a79",
+                "reference": "e25d44a2d91da9179cd2d7fec952313548597a79",
+                "shasum": ""
+            },
+            "require": {
+                "composer/semver": "^3.3",
+                "ext-json": "*",
+                "illuminate/support": "5.8.*||^6.0||^7.0||^8.0||^9.0||^10.0||^11.0||^12.0",
+                "php": "^7.0||^8.0",
+                "phpoffice/phpspreadsheet": "^1.29.9",
+                "psr/simple-cache": "^1.0||^2.0||^3.0"
+            },
+            "require-dev": {
+                "laravel/scout": "^7.0||^8.0||^9.0||^10.0",
+                "orchestra/testbench": "^6.0||^7.0||^8.0||^9.0||^10.0",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Excel": "Maatwebsite\\Excel\\Facades\\Excel"
+                    },
+                    "providers": [
+                        "Maatwebsite\\Excel\\ExcelServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Maatwebsite\\Excel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Brouwers",
+                    "email": "patrick@spartner.nl"
+                }
+            ],
+            "description": "Supercharged Excel exports and imports in Laravel",
+            "keywords": [
+                "PHPExcel",
+                "batch",
+                "csv",
+                "excel",
+                "export",
+                "import",
+                "laravel",
+                "php",
+                "phpspreadsheet"
+            ],
+            "support": {
+                "issues": "https://github.com/SpartnerNL/Laravel-Excel/issues",
+                "source": "https://github.com/SpartnerNL/Laravel-Excel/tree/3.1.64"
+            },
+            "funding": [
+                {
+                    "url": "https://laravel-excel.com/commercial-support",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/patrickbrouwers",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-02-24T11:12:50+00:00"
+        },
+        {
+            "name": "maennchen/zipstream-php",
+            "version": "3.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/maennchen/ZipStream-PHP.git",
+                "reference": "aeadcf5c412332eb426c0f9b4485f6accba2a99f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/maennchen/ZipStream-PHP/zipball/aeadcf5c412332eb426c0f9b4485f6accba2a99f",
+                "reference": "aeadcf5c412332eb426c0f9b4485f6accba2a99f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-zlib": "*",
+                "php-64bit": "^8.2"
+            },
+            "require-dev": {
+                "brianium/paratest": "^7.7",
+                "ext-zip": "*",
+                "friendsofphp/php-cs-fixer": "^3.16",
+                "guzzlehttp/guzzle": "^7.5",
+                "mikey179/vfsstream": "^1.6",
+                "php-coveralls/php-coveralls": "^2.5",
+                "phpunit/phpunit": "^11.0",
+                "vimeo/psalm": "^6.0"
+            },
+            "suggest": {
+                "guzzlehttp/psr7": "^2.4",
+                "psr/http-message": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ZipStream\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Duncan",
+                    "email": "pabs@pablotron.org"
+                },
+                {
+                    "name": "Jonatan Männchen",
+                    "email": "jonatan@maennchen.ch"
+                },
+                {
+                    "name": "Jesse Donat",
+                    "email": "donatj@gmail.com"
+                },
+                {
+                    "name": "András Kolesár",
+                    "email": "kolesar@kolesar.hu"
+                }
+            ],
+            "description": "ZipStream is a library for dynamically streaming dynamic zip files from PHP without writing to the disk at all on the server.",
+            "keywords": [
+                "stream",
+                "zip"
+            ],
+            "support": {
+                "issues": "https://github.com/maennchen/ZipStream-PHP/issues",
+                "source": "https://github.com/maennchen/ZipStream-PHP/tree/3.1.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/maennchen",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-27T12:07:53+00:00"
+        },
+        {
+            "name": "markbaker/complex",
+            "version": "3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MarkBaker/PHPComplex.git",
+                "reference": "95c56caa1cf5c766ad6d65b6344b807c1e8405b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MarkBaker/PHPComplex/zipball/95c56caa1cf5c766ad6d65b6344b807c1e8405b9",
+                "reference": "95c56caa1cf5c766ad6d65b6344b807c1e8405b9",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Complex\\": "classes/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker",
+                    "email": "mark@lange.demon.co.uk"
+                }
+            ],
+            "description": "PHP Class for working with complex numbers",
+            "homepage": "https://github.com/MarkBaker/PHPComplex",
+            "keywords": [
+                "complex",
+                "mathematics"
+            ],
+            "support": {
+                "issues": "https://github.com/MarkBaker/PHPComplex/issues",
+                "source": "https://github.com/MarkBaker/PHPComplex/tree/3.0.2"
+            },
+            "time": "2022-12-06T16:21:08+00:00"
+        },
+        {
+            "name": "markbaker/matrix",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MarkBaker/PHPMatrix.git",
+                "reference": "728434227fe21be27ff6d86621a1b13107a2562c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MarkBaker/PHPMatrix/zipball/728434227fe21be27ff6d86621a1b13107a2562c",
+                "reference": "728434227fe21be27ff6d86621a1b13107a2562c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phploc/phploc": "^4.0",
+                "phpmd/phpmd": "2.*",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "sebastian/phpcpd": "^4.0",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Matrix\\": "classes/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Baker",
+                    "email": "mark@demon-angel.eu"
+                }
+            ],
+            "description": "PHP Class for working with matrices",
+            "homepage": "https://github.com/MarkBaker/PHPMatrix",
+            "keywords": [
+                "mathematics",
+                "matrix",
+                "vector"
+            ],
+            "support": {
+                "issues": "https://github.com/MarkBaker/PHPMatrix/issues",
+                "source": "https://github.com/MarkBaker/PHPMatrix/tree/3.0.1"
+            },
+            "time": "2022-12-02T22:17:43+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "3.8.1",
             "source": {
@@ -2583,6 +3354,112 @@
             "time": "2024-11-21T10:39:51+00:00"
         },
         {
+            "name": "phpoffice/phpspreadsheet",
+            "version": "1.29.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PhpSpreadsheet.git",
+                "reference": "c80041b1628c4f18030407134fe88303661d4e4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PhpSpreadsheet/zipball/c80041b1628c4f18030407134fe88303661d4e4e",
+                "reference": "c80041b1628c4f18030407134fe88303661d4e4e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/pcre": "^1||^2||^3",
+                "ext-ctype": "*",
+                "ext-dom": "*",
+                "ext-fileinfo": "*",
+                "ext-gd": "*",
+                "ext-iconv": "*",
+                "ext-libxml": "*",
+                "ext-mbstring": "*",
+                "ext-simplexml": "*",
+                "ext-xml": "*",
+                "ext-xmlreader": "*",
+                "ext-xmlwriter": "*",
+                "ext-zip": "*",
+                "ext-zlib": "*",
+                "ezyang/htmlpurifier": "^4.15",
+                "maennchen/zipstream-php": "^2.1 || ^3.0",
+                "markbaker/complex": "^3.0",
+                "markbaker/matrix": "^3.0",
+                "php": "^7.4 || ^8.0",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
+            },
+            "require-dev": {
+                "dealerdirect/phpcodesniffer-composer-installer": "dev-main",
+                "dompdf/dompdf": "^1.0 || ^2.0 || ^3.0",
+                "friendsofphp/php-cs-fixer": "^3.2",
+                "mitoteam/jpgraph": "^10.3",
+                "mpdf/mpdf": "^8.1.1",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpstan/phpstan": "^1.1",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^8.5 || ^9.0",
+                "squizlabs/php_codesniffer": "^3.7",
+                "tecnickcom/tcpdf": "^6.5"
+            },
+            "suggest": {
+                "dompdf/dompdf": "Option for rendering PDF with PDF Writer",
+                "ext-intl": "PHP Internationalization Functions",
+                "mitoteam/jpgraph": "Option for rendering charts, or including charts with PDF or HTML Writers",
+                "mpdf/mpdf": "Option for rendering PDF with PDF Writer",
+                "tecnickcom/tcpdf": "Option for rendering PDF with PDF Writer"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpOffice\\PhpSpreadsheet\\": "src/PhpSpreadsheet"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "https://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker",
+                    "homepage": "https://markbakeruk.net"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "https://rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                },
+                {
+                    "name": "Adrien Crivelli"
+                }
+            ],
+            "description": "PHPSpreadsheet - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "https://github.com/PHPOffice/PhpSpreadsheet",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "gnumeric",
+                "ods",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPOffice/PhpSpreadsheet/issues",
+                "source": "https://github.com/PHPOffice/PhpSpreadsheet/tree/1.29.10"
+            },
+            "time": "2025-02-08T02:56:14+00:00"
+        },
+        {
             "name": "phpoption/phpoption",
             "version": "1.9.3",
             "source": {
@@ -2656,6 +3533,55 @@
                 }
             ],
             "time": "2024-07-20T21:41:07+00:00"
+        },
+        {
+            "name": "psr/cache",
+            "version": "3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\Cache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "https://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https://github.com/php-fig/cache/tree/3.0.0"
+            },
+            "time": "2021-02-03T23:26:27+00:00"
         },
         {
             "name": "psr/clock",
@@ -3359,6 +4285,611 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "spatie/image",
+            "version": "3.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/image.git",
+                "reference": "06cf293f66c833704935ba18e16c784d7e8433a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/image/zipball/06cf293f66c833704935ba18e16c784d7e8433a7",
+                "reference": "06cf293f66c833704935ba18e16c784d7e8433a7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-exif": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": "^8.2",
+                "spatie/image-optimizer": "^1.7.5",
+                "spatie/temporary-directory": "^2.2",
+                "symfony/process": "^6.4|^7.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "ext-imagick": "*",
+                "laravel/sail": "^1.34",
+                "pestphp/pest": "^2.28",
+                "phpstan/phpstan": "^1.10.50",
+                "spatie/pest-plugin-snapshots": "^2.1",
+                "spatie/pixelmatch-php": "^1.0",
+                "spatie/ray": "^1.40.1",
+                "symfony/var-dumper": "^6.4|7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manipulate images with an expressive API",
+            "homepage": "https://github.com/spatie/image",
+            "keywords": [
+                "image",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie/image/tree/3.8.0"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-17T10:19:44+00:00"
+        },
+        {
+            "name": "spatie/image-optimizer",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/image-optimizer.git",
+                "reference": "4fd22035e81d98fffced65a8c20d9ec4daa9671c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/4fd22035e81d98fffced65a8c20d9ec4daa9671c",
+                "reference": "4fd22035e81d98fffced65a8c20d9ec4daa9671c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": "^7.3|^8.0",
+                "psr/log": "^1.0 | ^2.0 | ^3.0",
+                "symfony/process": "^4.2|^5.0|^6.0|^7.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^1.21",
+                "phpunit/phpunit": "^8.5.21|^9.4.4",
+                "symfony/var-dumper": "^4.2|^5.0|^6.0|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\ImageOptimizer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily optimize images using PHP",
+            "homepage": "https://github.com/spatie/image-optimizer",
+            "keywords": [
+                "image-optimizer",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/image-optimizer/issues",
+                "source": "https://github.com/spatie/image-optimizer/tree/1.8.0"
+            },
+            "time": "2024-11-04T08:24:54+00:00"
+        },
+        {
+            "name": "spatie/laravel-activitylog",
+            "version": "4.10.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-activitylog.git",
+                "reference": "466f30f7245fe3a6e328ad5e6812bd43b4bddea5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/466f30f7245fe3a6e328ad5e6812bd43b4bddea5",
+                "reference": "466f30f7245fe3a6e328ad5e6812bd43b4bddea5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "illuminate/database": "^8.69 || ^9.27 || ^10.0 || ^11.0 || ^12.0",
+                "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+                "php": "^8.1",
+                "spatie/laravel-package-tools": "^1.6.3"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "orchestra/testbench": "^6.23 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
+                "pestphp/pest": "^1.20 || ^2.0 || ^3.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Activitylog\\ActivitylogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Activitylog\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Tom Witkowski",
+                    "email": "dev.gummibeer@gmail.com",
+                    "homepage": "https://gummibeer.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A very simple activity logger to monitor the users of your website or application",
+            "homepage": "https://github.com/spatie/activitylog",
+            "keywords": [
+                "activity",
+                "laravel",
+                "log",
+                "spatie",
+                "user"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-activitylog/issues",
+                "source": "https://github.com/spatie/laravel-activitylog/tree/4.10.1"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-02-10T15:38:25+00:00"
+        },
+        {
+            "name": "spatie/laravel-medialibrary",
+            "version": "11.12.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-medialibrary.git",
+                "reference": "2ca2cd098c856b931f581c02593c06f01dc32a06"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/2ca2cd098c856b931f581c02593c06f01dc32a06",
+                "reference": "2ca2cd098c856b931f581c02593c06f01dc32a06",
+                "shasum": ""
+            },
+            "require": {
+                "composer/semver": "^3.4",
+                "ext-exif": "*",
+                "ext-fileinfo": "*",
+                "ext-json": "*",
+                "illuminate/bus": "^10.2|^11.0|^12.0",
+                "illuminate/conditionable": "^10.2|^11.0|^12.0",
+                "illuminate/console": "^10.2|^11.0|^12.0",
+                "illuminate/database": "^10.2|^11.0|^12.0",
+                "illuminate/pipeline": "^10.2|^11.0|^12.0",
+                "illuminate/support": "^10.2|^11.0|^12.0",
+                "maennchen/zipstream-php": "^3.1",
+                "php": "^8.2",
+                "spatie/image": "^3.3.2",
+                "spatie/laravel-package-tools": "^1.16.1",
+                "spatie/temporary-directory": "^2.2",
+                "symfony/console": "^6.4.1|^7.0"
+            },
+            "conflict": {
+                "php-ffmpeg/php-ffmpeg": "<0.6.1"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "^3.293.10",
+                "ext-imagick": "*",
+                "ext-pdo_sqlite": "*",
+                "ext-zip": "*",
+                "guzzlehttp/guzzle": "^7.8.1",
+                "larastan/larastan": "^2.7|^3.0",
+                "league/flysystem-aws-s3-v3": "^3.22",
+                "mockery/mockery": "^1.6.7",
+                "orchestra/testbench": "^7.0|^8.17|^9.0|^10.0",
+                "pestphp/pest": "^2.28|^3.5",
+                "phpstan/extension-installer": "^1.3.1",
+                "spatie/laravel-ray": "^1.33",
+                "spatie/pdf-to-image": "^2.2|^3.0",
+                "spatie/pest-plugin-snapshots": "^2.1"
+            },
+            "suggest": {
+                "league/flysystem-aws-s3-v3": "Required to use AWS S3 file storage",
+                "php-ffmpeg/php-ffmpeg": "Required for generating video thumbnails",
+                "spatie/pdf-to-image": "Required for generating thumbnails of PDFs and SVGs"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\MediaLibrary\\MediaLibraryServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\MediaLibrary\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Associate files with Eloquent models",
+            "homepage": "https://github.com/spatie/laravel-medialibrary",
+            "keywords": [
+                "cms",
+                "conversion",
+                "downloads",
+                "images",
+                "laravel",
+                "laravel-medialibrary",
+                "media",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-medialibrary/issues",
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/11.12.7"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-02-24T09:13:17+00:00"
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.19.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "1c9c30ac6a6576b8d15c6c37b6cf23d748df2faa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/1c9c30ac6a6576b8d15c6c37b6cf23d748df2faa",
+                "reference": "1c9c30ac6a6576b8d15c6c37b6cf23d748df2faa",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^9.28|^10.0|^11.0|^12.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.5",
+                "orchestra/testbench": "^7.7|^8.0|^9.0|^10.0",
+                "pestphp/pest": "^1.23|^2.1|^3.1",
+                "phpunit/phpunit": "^9.5.24|^10.5|^11.5",
+                "spatie/pest-plugin-test-time": "^1.1|^2.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.19.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-02-06T14:58:20+00:00"
+        },
+        {
+            "name": "spatie/laravel-permission",
+            "version": "6.16.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-permission.git",
+                "reference": "4fa03c06509e037a4d42c131d0f181e3e4bbd483"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/4fa03c06509e037a4d42c131d0f181e3e4bbd483",
+                "reference": "4fa03c06509e037a4d42c131d0f181e3e4bbd483",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/auth": "^8.12|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/container": "^8.12|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/contracts": "^8.12|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/database": "^8.12|^9.0|^10.0|^11.0|^12.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "laravel/passport": "^11.0|^12.0",
+                "laravel/pint": "^1.0",
+                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0|^10.0",
+                "phpunit/phpunit": "^9.4|^10.1|^11.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Permission\\PermissionServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "6.x-dev",
+                    "dev-master": "6.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Spatie\\Permission\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Permission handling for Laravel 8.0 and up",
+            "homepage": "https://github.com/spatie/laravel-permission",
+            "keywords": [
+                "acl",
+                "laravel",
+                "permission",
+                "permissions",
+                "rbac",
+                "roles",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-permission/issues",
+                "source": "https://github.com/spatie/laravel-permission/tree/6.16.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-02-28T20:29:57+00:00"
+        },
+        {
+            "name": "spatie/laravel-query-builder",
+            "version": "6.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-query-builder.git",
+                "reference": "465d9b7364590c9ae3ee3738ff8a293e685dd588"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/465d9b7364590c9ae3ee3738ff8a293e685dd588",
+                "reference": "465d9b7364590c9ae3ee3738ff8a293e685dd588",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^10.0|^11.0|^12.0",
+                "illuminate/http": "^10.0|^11.0|^12.0",
+                "illuminate/support": "^10.0|^11.0|^12.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.11"
+            },
+            "require-dev": {
+                "ext-json": "*",
+                "mockery/mockery": "^1.4",
+                "orchestra/testbench": "^7.0|^8.0|^10.0",
+                "pestphp/pest": "^2.0|^3.7",
+                "phpunit/phpunit": "^10.0|^11.5.3",
+                "spatie/invade": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\QueryBuilder\\QueryBuilderServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\QueryBuilder\\": "src",
+                    "Spatie\\QueryBuilder\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily build Eloquent queries from API requests",
+            "homepage": "https://github.com/spatie/laravel-query-builder",
+            "keywords": [
+                "laravel-query-builder",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-query-builder/issues",
+                "source": "https://github.com/spatie/laravel-query-builder"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2025-02-19T07:14:53+00:00"
+        },
+        {
+            "name": "spatie/temporary-directory",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/temporary-directory.git",
+                "reference": "580eddfe9a0a41a902cac6eeb8f066b42e65a32b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/580eddfe9a0a41a902cac6eeb8f066b42e65a32b",
+                "reference": "580eddfe9a0a41a902cac6eeb8f066b42e65a32b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\TemporaryDirectory\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alex Vanderbist",
+                    "email": "alex@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easily create, use and destroy temporary directories",
+            "homepage": "https://github.com/spatie/temporary-directory",
+            "keywords": [
+                "php",
+                "spatie",
+                "temporary-directory"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/temporary-directory/issues",
+                "source": "https://github.com/spatie/temporary-directory/tree/2.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-01-13T13:04:43+00:00"
         },
         {
             "name": "symfony/clock",
@@ -5589,6 +7120,149 @@
             "time": "2025-01-17T11:39:41+00:00"
         },
         {
+            "name": "symfony/yaml",
+            "version": "v7.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "ac238f173df0c9c1120f862d0f599e17535a87ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/ac238f173df0c9c1120f862d0f599e17535a87ec",
+                "reference": "ac238f173df0c9c1120f862d0f599e17535a87ec",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.2",
+                "symfony/deprecation-contracts": "^2.5|^3.0",
+                "symfony/polyfill-ctype": "^1.8"
+            },
+            "conflict": {
+                "symfony/console": "<6.4"
+            },
+            "require-dev": {
+                "symfony/console": "^6.4|^7.0"
+            },
+            "bin": [
+                "Resources/bin/yaml-lint"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Loads and dumps YAML files",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/yaml/tree/v7.2.3"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2025-01-07T12:55:42+00:00"
+        },
+        {
+            "name": "tailflow/laravel-orion",
+            "version": "2.23.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tailflow/laravel-orion.git",
+                "reference": "686c16c5c72eb4ade67fc108e7ae8b5593c686da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tailflow/laravel-orion/zipball/686c16c5c72eb4ade67fc108e7ae8b5593c686da",
+                "reference": "686c16c5c72eb4ade67fc108e7ae8b5593c686da",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.9|^3.1|^4.0",
+                "ext-json": "*",
+                "illuminate/bus": ">=5.7",
+                "illuminate/contracts": ">=5.7",
+                "illuminate/database": ">=5.7",
+                "illuminate/http": ">=5.7",
+                "illuminate/pagination": ">=5.7",
+                "illuminate/support": ">=5.7",
+                "php": ">=7.3",
+                "symfony/yaml": "^5.3|^6.0|^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "orchestra/testbench": "^3.7|^4.0|^5.0|^6.0|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Orion": "Orion\\Facades\\Orion"
+                    },
+                    "providers": [
+                        "Orion\\OrionServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-main": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orion\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aleksei Zarubin",
+                    "email": "alex@tailflow.org"
+                }
+            ],
+            "description": "Orion for Laravel allows you to build a fully featured REST API based on your Eloquent models and relationships with the simplicity of Laravel as you love it.",
+            "keywords": [
+                "api",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/tailflow/laravel-orion/issues",
+                "source": "https://github.com/tailflow/laravel-orion"
+            },
+            "time": "2024-11-04T09:10:16+00:00"
+        },
+        {
             "name": "tightenco/ziggy",
             "version": "v2.5.2",
             "source": {
@@ -5932,6 +7606,94 @@
     ],
     "packages-dev": [
         {
+            "name": "barryvdh/laravel-debugbar",
+            "version": "v3.15.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barryvdh/laravel-debugbar.git",
+                "reference": "0bc1e1361e7fffc2be156f46ad1fba6927c01729"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/0bc1e1361e7fffc2be156f46ad1fba6927c01729",
+                "reference": "0bc1e1361e7fffc2be156f46ad1fba6927c01729",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/routing": "^9|^10|^11|^12",
+                "illuminate/session": "^9|^10|^11|^12",
+                "illuminate/support": "^9|^10|^11|^12",
+                "php": "^8.1",
+                "php-debugbar/php-debugbar": "~2.1.1",
+                "symfony/finder": "^6|^7"
+            },
+            "conflict": {
+                "maximebf/debugbar": "*"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.3",
+                "orchestra/testbench-dusk": "^7|^8|^9|^10",
+                "phpunit/phpunit": "^9.5.10|^10|^11",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Debugbar": "Barryvdh\\Debugbar\\Facades\\Debugbar"
+                    },
+                    "providers": [
+                        "Barryvdh\\Debugbar\\ServiceProvider"
+                    ]
+                },
+                "branch-alias": {
+                    "dev-master": "3.15-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Barryvdh\\Debugbar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "PHP Debugbar integration for Laravel",
+            "keywords": [
+                "debug",
+                "debugbar",
+                "dev",
+                "laravel",
+                "profiler",
+                "webprofiler"
+            ],
+            "support": {
+                "issues": "https://github.com/barryvdh/laravel-debugbar/issues",
+                "source": "https://github.com/barryvdh/laravel-debugbar/tree/v3.15.2"
+            },
+            "funding": [
+                {
+                    "url": "https://fruitcake.nl",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/barryvdh",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-02-25T15:25:22+00:00"
+        },
+        {
             "name": "brianium/paratest",
             "version": "v7.7.0",
             "source": {
@@ -6023,51 +7785,6 @@
                 }
             ],
             "time": "2024-12-11T14:50:44+00:00"
-        },
-        {
-            "name": "doctrine/deprecations",
-            "version": "1.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/deprecations.git",
-                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/31610dbb31faa98e6b5447b62340826f54fbc4e9",
-                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1 || ^8.0"
-            },
-            "require-dev": {
-                "doctrine/coding-standard": "^9 || ^12",
-                "phpstan/phpstan": "1.4.10 || 2.0.3",
-                "phpstan/phpstan-phpunit": "^1.0 || ^2",
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
-                "psr/log": "^1 || ^2 || ^3"
-            },
-            "suggest": {
-                "psr/log": "Allows logging deprecations via PSR-3 logger implementation"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Doctrine\\Deprecations\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A small layer on top of trigger_error(E_USER_DEPRECATED) or PSR-3 logging with options to disable all deprecations or selectively for packages.",
-            "homepage": "https://www.doctrine-project.org/",
-            "support": {
-                "issues": "https://github.com/doctrine/deprecations/issues",
-                "source": "https://github.com/doctrine/deprecations/tree/1.1.4"
-            },
-            "time": "2024-12-07T21:18:45+00:00"
         },
         {
             "name": "fakerphp/faker",
@@ -6373,6 +8090,106 @@
                 "source": "https://github.com/Jean85/pretty-package-versions/tree/2.1.0"
             },
             "time": "2024-11-18T16:19:46+00:00"
+        },
+        {
+            "name": "laravel-shift/blueprint",
+            "version": "v2.11.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-shift/blueprint.git",
+                "reference": "f4071e3cf0c3c33ee6f5861b252910ef0030dee8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-shift/blueprint/zipball/f4071e3cf0c3c33ee6f5861b252910ef0030dee8",
+                "reference": "f4071e3cf0c3c33ee6f5861b252910ef0030dee8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^10.38|^11.0|^12.0",
+                "illuminate/database": "^10.38|^11.0|^12.0",
+                "illuminate/filesystem": "^10.38|^11.0|^12.0",
+                "illuminate/support": "^10.38|^11.0|^12.0",
+                "laravel-shift/faker-registry": "^0.3.0",
+                "symfony/yaml": ">=6.2"
+            },
+            "require-dev": {
+                "laravel/pint": "~1.18.0",
+                "mockery/mockery": "^1.4.4",
+                "orchestra/testbench": "^8.0|^9.0|^10.0",
+                "phpunit/phpunit": "^10.0|^11.5.3"
+            },
+            "suggest": {
+                "jasonmccreary/laravel-test-assertions": "Required to use additional assertions in generated tests (^1.0)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Blueprint\\BlueprintServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Blueprint\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An expressive, human readable code generation tool.",
+            "keywords": [
+                "code generation",
+                "framework",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel-shift/blueprint/issues",
+                "source": "https://github.com/laravel-shift/blueprint/tree/v2.11.1"
+            },
+            "time": "2025-02-11T19:59:49+00:00"
+        },
+        {
+            "name": "laravel-shift/faker-registry",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-shift/faker-registry.git",
+                "reference": "968ab023b6c76c2f67cc474ba6d81fce8ff869a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-shift/faker-registry/zipball/968ab023b6c76c2f67cc474ba6d81fce8ff869a9",
+                "reference": "968ab023b6c76c2f67cc474ba6d81fce8ff869a9",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.0|^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shift\\Faker\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason McCreary",
+                    "email": "jason@pureconcepts.net"
+                }
+            ],
+            "description": "A registry for generating Faker data from a name or data type.",
+            "support": {
+                "issues": "https://github.com/laravel-shift/faker-registry/issues",
+                "source": "https://github.com/laravel-shift/faker-registry/tree/v0.3.0"
+            },
+            "time": "2023-11-24T15:54:02+00:00"
         },
         {
             "name": "laravel/pail",
@@ -7337,6 +9154,76 @@
                 "source": "https://github.com/phar-io/version/tree/3.2.1"
             },
             "time": "2022-02-21T01:04:05+00:00"
+        },
+        {
+            "name": "php-debugbar/php-debugbar",
+            "version": "v2.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-debugbar/php-debugbar.git",
+                "reference": "16fa68da5617220594aa5e33fa9de415f94784a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-debugbar/php-debugbar/zipball/16fa68da5617220594aa5e33fa9de415f94784a0",
+                "reference": "16fa68da5617220594aa5e33fa9de415f94784a0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8",
+                "psr/log": "^1|^2|^3",
+                "symfony/var-dumper": "^4|^5|^6|^7"
+            },
+            "require-dev": {
+                "dbrekelmans/bdi": "^1",
+                "phpunit/phpunit": "^8|^9",
+                "symfony/panther": "^1|^2.1",
+                "twig/twig": "^1.38|^2.7|^3.0"
+            },
+            "suggest": {
+                "kriswallsmith/assetic": "The best way to manage assets",
+                "monolog/monolog": "Log using Monolog",
+                "predis/predis": "Redis storage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DebugBar\\": "src/DebugBar/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Maxime Bouroumeau-Fuseau",
+                    "email": "maxime.bouroumeau@gmail.com",
+                    "homepage": "http://maximebf.com"
+                },
+                {
+                    "name": "Barry vd. Heuvel",
+                    "email": "barryvdh@gmail.com"
+                }
+            ],
+            "description": "Debug bar in the browser for php application",
+            "homepage": "https://github.com/php-debugbar/php-debugbar",
+            "keywords": [
+                "debug",
+                "debug bar",
+                "debugbar",
+                "dev"
+            ],
+            "support": {
+                "issues": "https://github.com/php-debugbar/php-debugbar/issues",
+                "source": "https://github.com/php-debugbar/php-debugbar/tree/v2.1.6"
+            },
+            "time": "2025-02-21T17:47:03+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -8963,78 +10850,6 @@
             "time": "2024-10-20T05:08:20+00:00"
         },
         {
-            "name": "symfony/yaml",
-            "version": "v7.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "ac238f173df0c9c1120f862d0f599e17535a87ec"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/ac238f173df0c9c1120f862d0f599e17535a87ec",
-                "reference": "ac238f173df0c9c1120f862d0f599e17535a87ec",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=8.2",
-                "symfony/deprecation-contracts": "^2.5|^3.0",
-                "symfony/polyfill-ctype": "^1.8"
-            },
-            "conflict": {
-                "symfony/console": "<6.4"
-            },
-            "require-dev": {
-                "symfony/console": "^6.4|^7.0"
-            },
-            "bin": [
-                "Resources/bin/yaml-lint"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Loads and dumps YAML files",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.2.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2025-01-07T12:55:42+00:00"
-        },
-        {
             "name": "ta-tikoma/phpunit-architecture-test",
             "version": "0.8.4",
             "source": {
@@ -9146,12 +10961,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
