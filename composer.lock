@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0dbb418f99d51f1a16da5b6cac189ee",
+    "content-hash": "8ddf4cc0dbe82920fa9711d2a503d6c9",
     "packages": [
         {
             "name": "brick/math",
@@ -1502,16 +1502,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.0.1",
+            "version": "v12.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "d99e2385a6d4324782d52f4423891966425641be"
+                "reference": "09f4a014c3fea7726c6824f5e04fca6ee165e328"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/d99e2385a6d4324782d52f4423891966425641be",
-                "reference": "d99e2385a6d4324782d52f4423891966425641be",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/09f4a014c3fea7726c6824f5e04fca6ee165e328",
+                "reference": "09f4a014c3fea7726c6824f5e04fca6ee165e328",
                 "shasum": ""
             },
             "require": {
@@ -1619,7 +1619,7 @@
                 "league/flysystem-read-only": "^3.25.1",
                 "league/flysystem-sftp-v3": "^3.25.1",
                 "mockery/mockery": "^1.6.10",
-                "orchestra/testbench-core": "^10.0",
+                "orchestra/testbench-core": "^10.0.0",
                 "pda/pheanstalk": "^5.0.6",
                 "php-http/discovery": "^1.15",
                 "phpstan/phpstan": "^2.0",
@@ -1713,7 +1713,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-02-24T13:31:23+00:00"
+            "time": "2025-03-04T16:10:42+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -4285,6 +4285,67 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "skyronic/laravel-file-generator",
+            "version": "dev-l12-compatibility",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-shift/laravel-file-generator.git",
+                "reference": "a88fdbde172a9680162ab83f768d799e3978c9c6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-shift/laravel-file-generator/zipball/a88fdbde172a9680162ab83f768d799e3978c9c6",
+                "reference": "a88fdbde172a9680162ab83f768d799e3978c9c6",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^8.0|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/filesystem": "^8.0|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/support": "^8.0|^9.0|^10.0|^11.0|^12.0",
+                "illuminate/view": "^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": ">=8.2",
+                "symfony/finder": "^6.0|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.0|^10.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Skyronic\\FileGenerator\\FileGeneratorServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Skyronic\\FileGenerator\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anirudh Sanjeev",
+                    "email": "skyronic@gmail.com"
+                }
+            ],
+            "description": "Laravel package to help you automate creation of files. Build your own custom generators like 'artisan make:model'.",
+            "keywords": [
+                "laravel"
+            ],
+            "support": {
+                "source": "https://github.com/laravel-shift/laravel-file-generator/tree/l12-compatibility"
+            },
+            "time": "2025-02-15T19:14:11+00:00"
         },
         {
             "name": "spatie/image",
@@ -10961,7 +11022,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "skyronic/laravel-file-generator": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

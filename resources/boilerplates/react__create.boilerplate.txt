@@ -1,0 +1,31 @@
+{
+   "name": "React file for create page",
+   "out": "resources/js/pages/{{ $name }}/create.tsx",
+   "params": {}
+}
+---
+import AppLayout from '@/layouts/app-layout';
+import { type BreadcrumbItem } from '@/types';
+import { Head } from '@inertiajs/react';
+
+const breadcrumbs: BreadcrumbItem[] = [
+    {
+        title: '{{ ucfirst($name) }}',
+        href: route('{{ Illuminate\Support\Str::plural($name) }}.index'),
+    },
+    {
+        title: 'Create',
+        href: route('{{ Illuminate\Support\Str::plural($name) }}.create'),
+    },
+];
+
+export default function {{ ucfirst($name) }}Index() {
+    return (
+        <AppLayout breadcrumbs={breadcrumbs}>
+            <Head title="Create - {{ ucfirst($name) }}" />
+            <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
+                <p>{{$name}}.create page</p>
+            </div>
+        </AppLayout>
+    );
+}
