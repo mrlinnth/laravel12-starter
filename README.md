@@ -7,3 +7,7 @@
 - React JS 19.0
 - Shadcn UI
 - Tailwind CSS 4.0
+
+## Important Notes
+
+1. 
