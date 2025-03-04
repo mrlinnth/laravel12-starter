@@ -1,0 +1,17 @@
+models:
+    Feedback:
+        title: string:400
+        content: text
+        creator_id: id foreign:users
+        status: enum:pending,wip,completed
+        completed_at: nullable timestamp
+        softDeletes: true
+
+seeders: Feedback
+
+controllers:
+    Feedback:
+        resource: all
+        export:
+            query: all
+            respond: feedbacks
