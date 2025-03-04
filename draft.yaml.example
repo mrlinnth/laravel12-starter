@@ -1,5 +1,5 @@
 models:
-    Feedback:
+    Todo:
         title: string:400
         content: text
         creator_id: id foreign:users
@@ -7,11 +7,11 @@ models:
         completed_at: nullable timestamp
         softDeletes: true
 
-seeders: Feedback
+seeders: Todo
 
 controllers:
-    Feedback:
-        resource: all
+    Todo:
+        resource: web
         export:
             query: all
-            respond: feedbacks
+            respond: todos

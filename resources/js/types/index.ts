@@ -28,6 +28,19 @@ export interface SharedData {
     [key: string]: unknown;
 }
 
+export interface Todo {
+    id: number;
+    title: string;
+    content: string;
+    status: string;
+    creator_id: number;
+    completed_at?: string;
+    created_at: string;
+    updated_at: string;
+    deleted_at?: string;
+    creator: User;
+}
+
 export interface User {
     id: number;
     name: string;
