@@ -16,7 +16,7 @@ return new class extends Migration
 
         Schema::create('todos', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 400);
+            $table->string('name', 400);
             $table->text('content');
             $table->foreignId('creator_id')->constrained('users');
             $table->enum('status', array_column(TodoStatusEnum::cases(), 'value'));

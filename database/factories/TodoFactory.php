@@ -22,7 +22,7 @@ class TodoFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(1),
+            'name' => fake()->sentence(1),
             'content' => fake()->paragraphs(3, true),
             'creator_id' => User::factory(),
             'status' => fake()->randomElement(array_column(TodoStatusEnum::cases(), 'value')),

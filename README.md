@@ -27,7 +27,9 @@
 ### Node Packages
 
 - [React DayPicker](https://daypicker.dev/)
+- [Recharts](https://recharts.org/en-US/guide/installation)
 - [Sonner](https://sonner.emilkowal.ski/)
+- [Tanstack Table](https://tanstack.com/table)
 
 ## Tips
 

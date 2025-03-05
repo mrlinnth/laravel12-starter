@@ -21,6 +21,11 @@ export interface NavItem {
     isActive?: boolean;
 }
 
+export type Option = {
+    value: string;
+    label: string;
+};
+
 export interface SharedData {
     name: string;
     quote: { message: string; author: string };
@@ -30,7 +35,7 @@ export interface SharedData {
 
 export interface Todo {
     id: number;
-    title: string;
+    name: string;
     content: string;
     status: string;
     creator_id: number;

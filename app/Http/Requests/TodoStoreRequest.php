@@ -20,9 +20,8 @@ class TodoStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', 'max:400'],
+            'name' => ['required', 'string', 'max:400'],
             'content' => ['required', 'string'],
-            'creator_id' => ['required', 'integer', 'exists:users,id'],
             'status' => ['required', 'in:pending,wip,completed'],
             'completed_at' => ['nullable'],
         ];

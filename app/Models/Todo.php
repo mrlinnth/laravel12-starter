@@ -19,7 +19,7 @@ class Todo extends BaseModel implements HasMedia
      * @var array
      */
     protected $fillable = [
-        'title',
+        'name',
         'content',
         'creator_id',
         'status',
