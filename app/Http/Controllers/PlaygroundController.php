@@ -14,7 +14,7 @@ class PlaygroundController extends Controller
      */
     public function __invoke(Request $request): Response
     {
-        return Inertia::render('Playground', [
+        return Inertia::render('playground', [
             'users' => User::get(),
         ]);
     }

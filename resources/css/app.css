@@ -209,3 +209,10 @@
         @apply bg-background text-foreground;
     }
 }
+
+.text-link {
+    @apply font-semibold hover:underline;
+}
+.box {
+    @apply flex flex-col gap-4 border border-gray-500 p-10;
+}

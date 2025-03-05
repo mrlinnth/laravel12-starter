@@ -1,5 +1,28 @@
 # Laravel 12 starter template
 
+## Requirements
+
+- php 8.2 and above
+- composer 2.8.1 and above
+- node 22.14.0 and above lts
+- pnpm
+- mysql
+- apache/nginx
+
+## Installation
+
+1. clone this repo `git@github.com:mrlinnth/laravel12-starter.git`
+1. create database
+1. change to project directory
+1. copy `.env.example` to `.env`
+1. update `.env` with correct settings
+1. run `composer install`
+1. run `php artisan key:generate`
+1. run `php artisan migrate:refresh --seed`
+1. run `corepack enable pnpm`
+1. run `pnpm install`
+1. run `pnpm build` or `pnpm dev`
+
 ## Use
 
 - [Laravel v12](https://laravel.com/docs/12.x)
@@ -33,6 +56,13 @@
 
 ## Tips
 
+### Default user
+
+```txt
+login email: admin@mail.com
+password: password
+```
+
 ### Basic CRUD workflow
 
 1. Generate migration, seeder, model, controller, request files using blueprint for your entity (refer to `draft.yaml.example` and create your own `draft.yaml`)
@@ -43,3 +73,4 @@
 1. Generate react crud files using `php artisan make:shadcn-crud` (custom artisan command which uses Laravel File Generator package)
 1. Update `resources/js/types/index.ts` with new interface for your entity
 1. Make necessary changes to generated react crud files
+1. Run `php artisan migrate:refresh --seed`

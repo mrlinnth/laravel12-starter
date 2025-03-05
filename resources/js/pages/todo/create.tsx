@@ -13,7 +13,8 @@ type Todo = {
     id?: number;
     name: string;
     created_at?: string;
-}
+    document?: File | null;
+};
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -29,7 +30,17 @@ const breadcrumbs: BreadcrumbItem[] = [
 export default function TodoCreate() {
     const { data, setData, post, reset, errors, processing } = useForm<Todo>({
         name: '',
+        document: null,
     });
+
+    const handleFileSelect = (files: FileList | null) => {
+        const doc = files ? files[0] : null;
+        console.log('doc: ', doc);
+
+        if (doc) {
+            setData('document', doc);
+        }
+    };
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
@@ -58,6 +69,10 @@ export default function TodoCreate() {
                                 autoFocus={true}
                             />
                             <InputError className="mt-2" message={errors.name} />
+                        </div>
+                        <div className="grid grid-flow-row gap-2">
+                            <Label htmlFor="image">Upload*</Label>
+                            <Input id="image" type="file" onChange={(e) => handleFileSelect(e.target.files)} required />
                         </div>
                         <div className="flex justify-end gap-4">
                             <Button variant="secondary" type="reset" disabled={processing}>

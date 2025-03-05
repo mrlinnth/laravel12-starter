@@ -1,4 +1,3 @@
-import { CardsDemo } from '@/components/cards';
 import { BlockJson } from '@/components/common/block-json';
 import DatePicker from '@/components/inputs/date-picker';
 import SmartSelect from '@/components/inputs/smart-select';
@@ -43,11 +42,10 @@ export default function Playground({ users }: { users: User[] }) {
                                 <DatePicker date={date} setDate={(v) => setDate(v)} />
                                 <BlockJson data={date?.toDateString()} />
                             </div>
+                            <div className="box"></div>
                         </div>
                     </TabsContent>
-                    <TabsContent value="cards">
-                        <CardsDemo />
-                    </TabsContent>
+                    <TabsContent value="cards">{/* <CardsDemo /> */}</TabsContent>
                 </Tabs>
             </div>
         </AppLayout>
