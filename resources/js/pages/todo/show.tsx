@@ -26,7 +26,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function TodoShow({ todo, isDelete }: { todo: Todo; isDelete: boolean }) {
+export default function TodoShow({ todo, document, isDelete }: { todo: Todo; document: string; isDelete: boolean }) {
     const [openDelete, setOpenDelete] = React.useState(isDelete);
 
     return (
@@ -40,6 +40,7 @@ export default function TodoShow({ todo, isDelete }: { todo: Todo; isDelete: boo
                     <CardContent>
                         <dl className="-my-3 divide-y divide-gray-100 text-sm">
                             <DetailListItem label="name" value={todo.name} />
+                            <DetailListItem label="document" value={document} />
                             <DetailListItem label="created at" value={todo.created_at} />
                         </dl>
                     </CardContent>

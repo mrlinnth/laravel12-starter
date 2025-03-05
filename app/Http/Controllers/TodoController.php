@@ -32,13 +32,16 @@ class TodoController extends Controller
     public function store(TodoStoreRequest $request): RedirectResponse
     {
         $data = array_merge(
-            $request->safe()->toArray(),
+            $request->safe()->except(['document']),
             [
                 'creator_id' => Auth::user()->id,
             ]
         );
-
         $todo = Todo::create($data);
+
+        // upload file and save to media
+        $path = $request->document->store('todos');
+        $todo->addMediaFromDisk($path, 'local')->toMediaCollection();
 
         $request->session()->flash('todo.id', $todo->id);
 
@@ -49,6 +52,7 @@ class TodoController extends Controller
     {
         return Inertia::render('todo/show', [
             'todo' => $todo,
+            'document' => $todo->getFirstMediaUrl(),
         ]);
     }
 

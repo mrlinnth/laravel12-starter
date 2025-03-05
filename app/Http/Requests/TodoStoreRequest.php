@@ -21,6 +21,7 @@ class TodoStoreRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:400'],
+            'document' => ['required', 'file'],
         ];
     }
 }
