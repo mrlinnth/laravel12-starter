@@ -1,0 +1,71 @@
+{
+   "name": "React file for show page",
+   "out": "resources/js/pages/{{ $name }}/show.tsx",
+   "params": {}
+}
+---
+import { DeleteBtn } from '@/components/buttons/delete-btn';
+import { EditBtn } from '@/components/buttons/edit-btn';
+import { DetailListItem } from '@/components/common/detail-list-item';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import AppLayout from '@/layouts/app-layout';
+import { BreadcrumbItem } from '@/types';
+import { Head } from '@inertiajs/react';
+import React from 'react';
+
+// Dummy interface
+// Update your types file and import from it
+type {{ ucfirst($name) }} = {
+    id?: number;
+    name: string;
+    created_at?: string;
+};
+
+const breadcrumbs: BreadcrumbItem[] = [
+    {
+        title: '{{ ucfirst($name) }}',
+        href: route('{{ Illuminate\Support\Str::plural($name) }}.index'),
+    },
+    {
+        title: 'Detail',
+        href: '#',
+    },
+];
+
+export default function {{ ucfirst($name) }}Show({ {{ $name }}, isDelete }: { {{ $name }}: {{ ucfirst($name) }}; isDelete: boolean }) {
+    const [openDelete, setOpenDelete] = React.useState(isDelete);
+
+    return (
+        <AppLayout breadcrumbs={breadcrumbs}>
+            <Head title="Detail - {{ ucfirst($name) }}" />
+            <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
+                <Card className="md:max-w-xl">
+                    <CardHeader>
+                        <CardTitle>Info</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <dl className="-my-3 divide-y divide-gray-100 text-sm">
+                            <DetailListItem label="name" value={{ '{'.$name.'.name}' }} />
+                            <DetailListItem label="created at" value={{ '{'.$name.'.created_at}' }} />
+                        </dl>
+                    </CardContent>
+                    <CardFooter className="flex flex-row justify-between">
+                        <EditBtn
+                            route={route('{{ Illuminate\Support\Str::plural($name) }}.edit', {
+                                {{ $name }}: {{ $name }},
+                            })}
+                        />
+                        <DeleteBtn
+                            route={route('{{ Illuminate\Support\Str::plural($name) }}.destroy', {
+                                {{ $name }}: {{ $name }},
+                            })}
+                            item={{ '{'.$name.'.name}' }}
+                            open={openDelete}
+                            setOpen={setOpenDelete}
+                        />
+                    </CardFooter>
+                </Card>
+            </div>
+        </AppLayout>
+    );
+}

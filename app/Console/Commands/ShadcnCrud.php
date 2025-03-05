@@ -28,5 +28,7 @@ class ShadcnCrud extends Command
         $entity = $this->argument('entity');
         $this->call('generate', ['type' => 'react:index', 'name' => $entity, '--force' => true]);
         $this->call('generate', ['type' => 'react:create', 'name' => $entity, '--force' => true]);
+        $this->call('generate', ['type' => 'react:show', 'name' => $entity, '--force' => true]);
+        $this->call('generate', ['type' => 'react:edit', 'name' => $entity, '--force' => true]);
     }
 }
