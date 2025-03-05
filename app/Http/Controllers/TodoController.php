@@ -8,6 +8,7 @@ use App\Http\Requests\TodoUpdateRequest;
 use App\Models\Todo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 use Maatwebsite\Excel\Facades\Excel;
@@ -30,7 +31,14 @@ class TodoController extends Controller
 
     public function store(TodoStoreRequest $request): RedirectResponse
     {
-        $todo = Todo::create($request->validated());
+        $data = array_merge(
+            $request->safe()->toArray(),
+            [
+                'creator_id' => Auth::user()->id,
+            ]
+        );
+
+        $todo = Todo::create($data);
 
         $request->session()->flash('todo.id', $todo->id);
 

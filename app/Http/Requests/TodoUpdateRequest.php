@@ -21,9 +21,6 @@ class TodoUpdateRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:400'],
-            'content' => ['required', 'string'],
-            'status' => ['required', 'in:pending,wip,completed'],
-            'completed_at' => ['nullable'],
         ];
     }
 }
