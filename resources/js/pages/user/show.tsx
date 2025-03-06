@@ -14,6 +14,7 @@ type User = {
     name: string;
     email: string;
     main_role: string;
+    can_do: string[];
     created_at?: string;
 };
 
@@ -44,6 +45,7 @@ export default function UserShow({ user, isDelete }: { user: User; isDelete: boo
                             <DetailListItem label="name" value={user.name} />
                             <DetailListItem label="email" value={user.email} />
                             <DetailListItem label="role" value={user.main_role} />
+                            <DetailListItem label="permissions" value={user.can_do.join(', ')} />
                             <DetailListItem label="created at" value={user.created_at} />
                         </dl>
                     </CardContent>

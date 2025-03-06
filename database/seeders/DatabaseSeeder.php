@@ -27,12 +27,6 @@ class DatabaseSeeder extends Seeder
         // create test user
         $this->createTestUser();
 
-        // create permissions which are not belonged to any role
-        Permission::create(
-            ['name' => 'import'],
-            ['name' => 'export'],
-        );
-
         // seed dummy data
         $this->call([
             TodoSeeder::class,
@@ -55,7 +49,8 @@ class DatabaseSeeder extends Seeder
 
     }
 
-    // manager user with manager role and CRUD permissions
+    // manager role and CRUD permissions
+    // assign user to manager role for indirect CRUD permissions
     protected function createManager(): void
     {
         $roleName = 'manager';
@@ -64,12 +59,11 @@ class DatabaseSeeder extends Seeder
         $role = Role::create(['name' => $roleName]);
 
         // create CRUD permissions and assign to role
-        $permissions = Permission::create(
-            ['name' => 'create'],
-            ['name' => 'read'],
-            ['name' => 'update'],
-            ['name' => 'delete'],
-        );
+        $crud = ['create', 'read', 'update', 'delete'];
+        foreach ($crud as $p) {
+            Permission::firstOrCreate(['name' => $p]);
+        }
+        $permissions = Permission::get()->pluck('name');
         $role->syncPermissions($permissions);
 
         // create user and assign role
@@ -81,7 +75,7 @@ class DatabaseSeeder extends Seeder
         $user->assignRole($roleName);
     }
 
-    // user without role nor permission
+    // user with direct read permission
     protected function createTestUser(): void
     {
         // create user
@@ -90,5 +84,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'user@mail.com',
             'password' => Hash::make('password'),
         ]);
+
+        $user->givePermissionTo('read');
     }
 }

@@ -59,7 +59,7 @@ class User extends Authenticatable
 
      * @var array
      */
-    protected $appends = ['is_super_admin', 'main_role'];
+    protected $appends = ['is_super_admin', 'main_role', 'can_do'];
 
     /**
      * Determine if the user is super admin.
@@ -78,6 +78,16 @@ class User extends Authenticatable
     {
         return Attribute::make(
             get: fn () => $this->getRoleNames()->first(),
+        );
+    }
+
+    /**
+     * Get the user's permissions.
+     */
+    protected function canDo(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->getAllPermissions()->pluck('name'),
         );
     }
 
