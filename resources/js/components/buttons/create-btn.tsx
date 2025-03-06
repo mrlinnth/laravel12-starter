@@ -9,7 +9,7 @@ export function CreateBtn({ route }: { route: string }) {
 
     function hasAccess() {
         if (is_super_admin) {
-            return false;
+            return true;
         }
 
         return can_do.includes('create');

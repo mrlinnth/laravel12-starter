@@ -13,7 +13,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return Inertia::render('dashboard');
     })->name('dashboard');
 
-    Route::get('/playground', PlaygroundController::class)->name('playground');
+    Route::group(['middleware' => ['role:god']], function () {
+        Route::get('secret', function () {
+            return Inertia::render('secret');
+        })->name('secret');
+    });
+
+    Route::get('playground', PlaygroundController::class)->name('playground');
 
     Route::resource('users', App\Http\Controllers\UserController::class);
 

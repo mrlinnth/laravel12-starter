@@ -9,6 +9,7 @@ use App\Models\Todo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
 use Maatwebsite\Excel\Facades\Excel;
@@ -59,6 +60,8 @@ class TodoController extends Controller
 
     public function edit(Request $request, Todo $todo): Response
     {
+        Gate::authorize('update', $todo);
+
         return Inertia::render('todo/edit', [
             'todo' => $todo,
             'media' => $todo->getFirstMediaUrl(),
@@ -67,6 +70,8 @@ class TodoController extends Controller
 
     public function update(TodoUpdateRequest $request, Todo $todo): RedirectResponse
     {
+        Gate::authorize('update', $todo);
+
         $todo->update($request->validated());
 
         $request->session()->flash('todo.id', $todo->id);

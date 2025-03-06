@@ -95,3 +95,12 @@
 1. Make necessary changes to generated react crud files
 1. Run `php artisan migrate:refresh --seed`
 1. Update `resources/js/components/app-sidebar.tsx` with new route
+
+### Authorization
+
+- Refer to [Spatie - Laravel Permission](https://spatie.be/docs/laravel-permission/v6/introduction)
+- check `database/seeders/DatabaseSeeder.php` DatabaseSeeder class for how to create role, permission and assign to user
+- `app/Models/User.php` User model has `is_super_admin`, `main_role`, `can_do` custom  attributes
+- for frontend authorization, check `resources/js/components/buttons/create-btn.tsx`, Create button is hidden for user without `create` permission
+- for backend authorization, check `app/Policies/TodoPolicy.php` TodoPolicy class `update` method and `app/Http/Controllers/TodoController.php` TodoController class `edit` and `update` methods
+- `secret` route in `routes/web.php` is available only to super admin user
