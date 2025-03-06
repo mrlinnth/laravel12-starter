@@ -1,17 +1,19 @@
 # Laravel 12 starter template
 
+> ⚠️ **ATTENTION** This is a starter template. Clone or fork this repo. Develop and commit in a new repo. Do not commit to this repo. ‼️
+
 ## Requirements
 
-- php 8.2 and above
-- composer 2.8.1 and above
-- node 22.14.0 and above lts
-- pnpm
+- php 8.2 or 8.3
+- composer 2.8.1
+- node 22.14.0
+- [pnpm](https://pnpm.io/installation#using-corepack)
 - mysql
 - apache/nginx
 
 ## Installation
 
-1. clone this repo `git@github.com:mrlinnth/laravel12-starter.git`
+1. clone or fork `git@github.com:mrlinnth/laravel12-starter.git`
 1. create database
 1. change to project directory
 1. copy `.env.example` to `.env`
@@ -19,7 +21,6 @@
 1. run `composer install`
 1. run `php artisan key:generate`
 1. run `php artisan migrate:refresh --seed`
-1. run `corepack enable pnpm`
 1. run `pnpm install`
 1. run `pnpm build` or `pnpm dev`
 
@@ -74,7 +75,7 @@
 #### For new entity (eg: Comment)
 
 1. Generate migration, seeder, model, controller, request files using blueprint for your entity (refer to `draft.yaml.example` and create your own `draft.yaml`)
-1. Delete blueprint generated view files
+1. Delete blueprint generated view direcotry under `resources/views`
 1. Update blueprint generated controller file to return `Inertia::render` instead of blade `view`
 1. Update `routes/web.php`
 1. Make changes to other blueprint generated files if necessary
