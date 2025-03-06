@@ -7,7 +7,7 @@
 - php 8.2 or 8.3
 - composer 2.8.1
 - node 22.14.0
-- [pnpm](https://pnpm.io/installation#using-corepack)
+- pnpm [install guide](https://pnpm.io/installation#using-corepack)
 - mysql
 - apache/nginx
 
@@ -22,7 +22,7 @@
 1. run `php artisan key:generate`
 1. run `php artisan migrate:refresh --seed`
 1. run `pnpm install`
-1. run `pnpm build` or `pnpm dev`
+1. run `pnpm dev` for local development or `pnpm build` for deployment
 
 ## Use
 
