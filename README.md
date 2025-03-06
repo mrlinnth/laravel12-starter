@@ -56,21 +56,41 @@
 
 ## Tips
 
-### Default user
+### Default users
 
-```txt
-login email: admin@mail.com
-password: password
-```
+| Name         | Login Email      | Password | Role    | Permissions               |
+|--------------|------------------|----------|---------|---------------------------|
+| Super Admin  | <admin@mail.com>   | password | god     | *                         |
+| Manager User | <manager@mail.com> | password | manager | create,read,update,delete |
+| User         | <user@mail.com>    | password |         |                           |
 
-### Basic CRUD workflow
+### File Upload
+
+- Use [Spatie - Laravel Media Library](https://spatie.be/docs/laravel-medialibrary/v11/introduction) to associate file to model
+- Check sample code in Todo CRUD files
+
+### Basic Workflow
+
+#### For new entity (eg: Comment)
 
 1. Generate migration, seeder, model, controller, request files using blueprint for your entity (refer to `draft.yaml.example` and create your own `draft.yaml`)
 1. Delete blueprint generated view files
 1. Update blueprint generated controller file to return `Inertia::render` instead of blade `view`
 1. Update `routes/web.php`
 1. Make changes to other blueprint generated files if necessary
-1. Generate react crud files using `php artisan make:shadcn-crud` (custom artisan command which uses Laravel File Generator package)
-1. Update `resources/js/types/index.ts` with new interface for your entity
+1. Generate react crud files using `php artisan make:shadcn-crud comment` (custom artisan command which uses Laravel File Generator package)
 1. Make necessary changes to generated react crud files
 1. Run `php artisan migrate:refresh --seed`
+1. Update `resources/js/components/app-sidebar.tsx` with new route
+
+#### If you already have migration file (eg: Role)
+
+1. Create factory and seeder (optional)
+1. If model not exist, create and extends `BaseModel`
+1. If controller not exist, create a resource controller
+1. If request not exist, create a form request
+1. Update web.php with new route(s)
+1. Generate react crud files using `php artisan make:shadcn-crud role`
+1. Make necessary changes to generated react crud files
+1. Run `php artisan migrate:refresh --seed`
+1. Update `resources/js/components/app-sidebar.tsx` with new route
