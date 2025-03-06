@@ -17,6 +17,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('users', App\Http\Controllers\UserController::class);
 
+    Route::resource('roles', App\Http\Controllers\RoleController::class);
+
     Route::get('todos/export', [App\Http\Controllers\TodoController::class, 'export'])->name('todos.export');
     Route::resource('todos', App\Http\Controllers\TodoController::class);
 

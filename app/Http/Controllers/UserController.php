@@ -37,7 +37,7 @@ class UserController extends Controller
     public function show(Request $request, User $user): Response
     {
         return Inertia::render('user/show', [
-            'user' => $user->load('roles'),
+            'user' => $user,
             'roles' => implode(',', $user->getRoleNames()->toArray()),
         ]);
     }
