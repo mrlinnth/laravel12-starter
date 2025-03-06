@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -22,12 +23,20 @@ class UserController extends Controller
 
     public function create(Request $request): Response
     {
-        return Inertia::render('user/create');
+        $roles = Role::whereNot('name', config('project.super_admin'))->pluck('name');
+
+        if ($request->user()->is_super_admin) {
+            $roles = Role::get()->pluck('name');
+        }
+
+        return Inertia::render('user/create', ['roles' => $roles]);
     }
 
     public function store(UserFormRequest $request): RedirectResponse
     {
-        $user = User::create($request->validated());
+        $user = User::create($request->safe()->except(['role']));
+
+        $user->assignRole($request->input('role'));
 
         $request->session()->flash('user.id', $user->id);
 
@@ -38,14 +47,20 @@ class UserController extends Controller
     {
         return Inertia::render('user/show', [
             'user' => $user,
-            'roles' => implode(',', $user->getRoleNames()->toArray()),
         ]);
     }
 
     public function edit(Request $request, User $user): Response
     {
+        $roles = Role::whereNot('name', config('project.super_admin'))->pluck('name');
+
+        if ($request->user()->is_super_admin) {
+            $roles = Role::get()->pluck('name');
+        }
+
         return Inertia::render('user/edit', [
             'user' => $user,
+            'roles' => $roles,
         ]);
     }
 

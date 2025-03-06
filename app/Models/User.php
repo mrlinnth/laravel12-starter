@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
 use DateTimeInterface;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -49,6 +50,35 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * The accessors to append to the model's array form.
+
+     *
+
+     * @var array
+     */
+    protected $appends = ['is_super_admin', 'main_role'];
+
+    /**
+     * Determine if the user is super admin.
+     */
+    protected function isSuperAdmin(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->hasRole(config('project.super_admin')),
+        );
+    }
+
+    /**
+     * Get the user's first role.
+     */
+    protected function mainRole(): Attribute
+    {
+        return Attribute::make(
+            get: fn () => $this->getRoleNames()->first(),
+        );
     }
 
     protected function serializeDate(DateTimeInterface $date): string

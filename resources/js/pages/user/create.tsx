@@ -1,4 +1,5 @@
 import InputError from '@/components/input-error';
+import SimpleSelect from '@/components/inputs/simple-select';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -13,6 +14,7 @@ type User = {
     name: string;
     email: string;
     password: string;
+    main_role: string;
 };
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -26,15 +28,17 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function UserCreate() {
+export default function UserCreate({ roles }: { roles: string[] }) {
     const { data, setData, post, reset, errors, processing } = useForm<User>({
         name: '',
         email: '',
         password: '',
+        main_role: '',
     });
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
+
         post(route('users.store'), {
             preserveScroll: true,
             onSuccess: () => {
@@ -84,6 +88,10 @@ export default function UserCreate() {
                                 placeholder="A long and secure password"
                             />
                             <InputError className="mt-2" message={errors.password} />
+                        </div>
+                        <div className="grid grid-flow-row gap-2">
+                            <Label htmlFor="Role">Role*</Label>
+                            <SimpleSelect options={roles} item={data.main_role} setItem={(v) => setData('main_role', v)} />
                         </div>
                         <div className="flex justify-end gap-4">
                             <Button variant="secondary" type="reset" disabled={processing}>

@@ -13,6 +13,7 @@ type User = {
     id?: number;
     name: string;
     email: string;
+    main_role: string;
     created_at?: string;
 };
 
@@ -27,7 +28,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function UserShow({ user, roles, isDelete }: { user: User; roles: string; isDelete: boolean }) {
+export default function UserShow({ user, isDelete }: { user: User; isDelete: boolean }) {
     const [openDelete, setOpenDelete] = React.useState(isDelete);
 
     return (
@@ -42,7 +43,7 @@ export default function UserShow({ user, roles, isDelete }: { user: User; roles:
                         <dl className="-my-3 divide-y divide-gray-100 text-sm">
                             <DetailListItem label="name" value={user.name} />
                             <DetailListItem label="email" value={user.email} />
-                            <DetailListItem label="roles" value={roles} />
+                            <DetailListItem label="role" value={user.main_role} />
                             <DetailListItem label="created at" value={user.created_at} />
                         </dl>
                     </CardContent>

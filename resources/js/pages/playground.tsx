@@ -1,5 +1,6 @@
 import { BlockJson } from '@/components/common/block-json';
 import DatePicker from '@/components/inputs/date-picker';
+import SimpleSelect from '@/components/inputs/simple-select';
 import SmartSelect from '@/components/inputs/smart-select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import AppLayout from '@/layouts/app-layout';
@@ -14,9 +15,10 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function Playground({ users }: { users: User[] }) {
+export default function Playground({ users, roles }: { users: User[]; roles: string[] }) {
     const [item, setItem] = React.useState<Option | undefined>();
     const [date, setDate] = React.useState<Date | undefined>();
+    const [role, setRole] = React.useState<string>('');
 
     const userOptions = users.map((obj) => ({
         value: obj.id?.toString() ?? '',
@@ -42,7 +44,10 @@ export default function Playground({ users }: { users: User[] }) {
                                 <DatePicker date={date} setDate={(v) => setDate(v)} />
                                 <BlockJson data={date?.toDateString()} />
                             </div>
-                            <div className="box"></div>
+                            <div className="box">
+                                <SimpleSelect options={roles} item={role} setItem={setRole} />
+                                <BlockJson data={role} />
+                            </div>
                         </div>
                     </TabsContent>
                     <TabsContent value="cards">{/* <CardsDemo /> */}</TabsContent>

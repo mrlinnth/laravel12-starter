@@ -1,4 +1,5 @@
 import InputError from '@/components/input-error';
+import SimpleSelect from '@/components/inputs/simple-select';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -13,6 +14,7 @@ type User = {
     id?: number;
     name: string;
     email: string;
+    main_role: string;
 };
 
 const breadcrumbs: BreadcrumbItem[] = [
@@ -26,10 +28,11 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function UserEdit({ user }: { user: User }) {
+export default function UserEdit({ user, roles }: { user: User; roles: string[] }) {
     const { data, setData, patch, reset, errors, processing } = useForm<User>({
         name: user.name,
         email: user.email,
+        main_role: user.main_role,
     });
 
     const submit: FormEventHandler = (e) => {
@@ -71,6 +74,10 @@ export default function UserEdit({ user }: { user: User }) {
                                 placeholder="moemoe@mail.com"
                             />
                             <InputError className="mt-2" message={errors.email} />
+                        </div>
+                        <div className="grid grid-flow-row gap-2">
+                            <Label htmlFor="Role">Role*</Label>
+                            <SimpleSelect options={roles} item={data.main_role} setItem={(v) => setData('main_role', v)} />
                         </div>
                         <div className="flex justify-end gap-4">
                             <Button variant="secondary" type="reset" disabled={processing}>
