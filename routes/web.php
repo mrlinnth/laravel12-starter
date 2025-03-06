@@ -15,6 +15,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/playground', PlaygroundController::class)->name('playground');
 
+    Route::resource('users', App\Http\Controllers\UserController::class);
+
     Route::get('todos/export', [App\Http\Controllers\TodoController::class, 'export'])->name('todos.export');
     Route::resource('todos', App\Http\Controllers\TodoController::class);
 

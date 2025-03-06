@@ -1,11 +1,4 @@
-{
-   "name": "React file for index page",
-   "out": "resources/js/pages/{{ $name }}/index.tsx",
-   "params": {}
-}
----
 import { CreateBtn } from '@/components/buttons/create-btn';
-import { ExportBtn } from '@/components/buttons/export-btn';
 import { DataTable, DataTableActions } from '@/components/tables/data-table';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -17,20 +10,21 @@ import { ArrowUpDown } from 'lucide-react';
 
 // Dummy interface
 // Update your types file and import from it
-type {{ ucfirst($name) }} = {
+type User = {
     id?: number;
     name: string;
+    email: string;
     created_at?: string;
-}
+};
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: '{{ ucfirst($name) }}',
-        href: route('{{ Illuminate\Support\Str::plural($name) }}.index'),
+        title: 'User',
+        href: route('users.index'),
     },
 ];
 
-const columns: ColumnDef<{{ ucfirst($name) }}>[] = [
+const columns: ColumnDef<User>[] = [
     {
         id: 'select',
         header: ({ table }) => (
@@ -59,13 +53,18 @@ const columns: ColumnDef<{{ ucfirst($name) }}>[] = [
         cell: ({ row }) => (
             <Link
                 className="text-link"
-                href={route('{{ Illuminate\Support\Str::plural($name) }}.show', {
-                    {{$name}}: row.original.id,
+                href={route('users.show', {
+                    user: row.original.id,
                 })}
             >
                 {row.getValue('name')}
             </Link>
         ),
+    },
+    {
+        accessorKey: 'email',
+        header: 'Email',
+        cell: ({ row }) => <div className="">{row.getValue('email')}</div>,
     },
     {
         accessorKey: 'created_at',
@@ -76,23 +75,22 @@ const columns: ColumnDef<{{ ucfirst($name) }}>[] = [
         id: 'actions',
         enableHiding: false,
         cell: ({ row }) => {
-            const param = { {{$name}}: row.original.id };
+            const param = { user: row.original.id };
 
-            return <DataTableActions routePrefix="{{ Illuminate\Support\Str::plural($name) }}" routeParam={param} />;
+            return <DataTableActions routePrefix="users" routeParam={param} />;
         },
     },
 ];
 
-export default function {{ ucfirst($name) }}Index({ {{ Illuminate\Support\Str::plural($name) }} }: { {{ Illuminate\Support\Str::plural($name) }}: {{ ucfirst($name) }}[] }) {
+export default function UserIndex({ users }: { users: User[] }) {
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
-            <Head title="{{ ucfirst($name) }}" />
+            <Head title="User" />
             <div className="flex h-full flex-1 flex-col gap-4 rounded-xl p-4">
                 <div className="flex flex-row justify-between">
-                    <CreateBtn route={route('{{ Illuminate\Support\Str::plural($name) }}.create')} />
-                    <ExportBtn route={route('{{ Illuminate\Support\Str::plural($name) }}.export')} />
+                    <CreateBtn route={route('users.create')} />
                 </div>
-                <DataTable data={{ '{'.Illuminate\Support\Str::plural($name).'}' }} columns={columns} />
+                <DataTable data={users} columns={columns} />
             </div>
         </AppLayout>
     );
