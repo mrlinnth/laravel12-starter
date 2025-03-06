@@ -3,7 +3,7 @@ import { EditBtn } from '@/components/buttons/edit-btn';
 import { DetailListItem } from '@/components/common/detail-list-item';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import AppLayout from '@/layouts/app-layout';
-import { BreadcrumbItem } from '@/types';
+import { BreadcrumbItem, User } from '@/types';
 import { Head } from '@inertiajs/react';
 import React from 'react';
 
@@ -12,6 +12,10 @@ import React from 'react';
 type Todo = {
     id?: number;
     name: string;
+    content: string;
+    status: string;
+    creator: User;
+    completed_at?: string;
     created_at?: string;
 };
 
@@ -26,7 +30,7 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function TodoShow({ todo, document, isDelete }: { todo: Todo; document: string; isDelete: boolean }) {
+export default function TodoShow({ todo, media, isDelete }: { todo: Todo; media: string; isDelete: boolean }) {
     const [openDelete, setOpenDelete] = React.useState(isDelete);
 
     return (
@@ -40,8 +44,12 @@ export default function TodoShow({ todo, document, isDelete }: { todo: Todo; doc
                     <CardContent>
                         <dl className="-my-3 divide-y divide-gray-100 text-sm">
                             <DetailListItem label="name" value={todo.name} />
-                            <DetailListItem label="document" value={document} />
+                            <DetailListItem label="status" value={todo.status} />
+                            <DetailListItem label="completed at" value={todo.completed_at} />
+                            <DetailListItem label="content" value={todo.content} />
+                            <DetailListItem label="created by" value={todo.creator.name} />
                             <DetailListItem label="created at" value={todo.created_at} />
+                            <DetailListItem label="file" value={media} />
                         </dl>
                     </CardContent>
                     <CardFooter className="flex flex-row justify-between">

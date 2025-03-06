@@ -4,7 +4,7 @@ import { DataTable, DataTableActions } from '@/components/tables/data-table';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import AppLayout from '@/layouts/app-layout';
-import { BreadcrumbItem } from '@/types';
+import { BreadcrumbItem, User } from '@/types';
 import { Head, Link } from '@inertiajs/react';
 import { ColumnDef } from '@tanstack/react-table';
 import { ArrowUpDown } from 'lucide-react';
@@ -14,8 +14,10 @@ import { ArrowUpDown } from 'lucide-react';
 type Todo = {
     id?: number;
     name: string;
+    status: string;
+    creator: User;
     created_at?: string;
-}
+};
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -60,6 +62,16 @@ const columns: ColumnDef<Todo>[] = [
                 {row.getValue('name')}
             </Link>
         ),
+    },
+    {
+        accessorKey: 'status',
+        header: 'Status',
+        cell: ({ row }) => <div className="">{row.getValue('status')}</div>,
+    },
+    {
+        accessorKey: 'creator',
+        header: 'Created By',
+        cell: ({ row }) => <div className="">{row.getValue<User>('creator').name}</div>,
     },
     {
         accessorKey: 'created_at',

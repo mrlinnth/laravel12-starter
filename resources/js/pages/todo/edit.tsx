@@ -2,6 +2,7 @@ import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, useForm } from '@inertiajs/react';
@@ -12,8 +13,9 @@ import { FormEventHandler } from 'react';
 type Todo = {
     id?: number;
     name: string;
-    created_at?: string;
-}
+    content: string;
+    document?: File | null;
+};
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -26,10 +28,20 @@ const breadcrumbs: BreadcrumbItem[] = [
     },
 ];
 
-export default function TodoEdit({ todo }: { todo: Todo; }) {
+export default function TodoEdit({ todo, media }: { todo: Todo; media: string }) {
     const { data, setData, patch, reset, errors, processing } = useForm<Todo>({
         name: todo.name,
+        content: todo.content,
+        document: null,
     });
+
+    const handleFileSelect = (files: FileList | null) => {
+        const doc = files ? files[0] : null;
+
+        if (doc) {
+            setData('document', doc);
+        }
+    };
 
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
@@ -58,6 +70,26 @@ export default function TodoEdit({ todo }: { todo: Todo; }) {
                                 autoFocus={true}
                             />
                             <InputError className="mt-2" message={errors.name} />
+                        </div>
+                        <div className="grid grid-flow-row gap-2">
+                            <Label htmlFor="name">Content</Label>
+                            <Textarea
+                                id="content"
+                                value={data.content}
+                                onChange={(e) => setData('content', e.target.value)}
+                                placeholder="Need 4 or 5 eggs for tomorrow breakfast"
+                            />
+                            <InputError className="mt-2" message={errors.content} />
+                        </div>
+                        <div className="grid grid-flow-row gap-2">
+                            <Label htmlFor="document">Upload</Label>
+                            <span className="text-muted-foreground text-sm">
+                                File:{' '}
+                                <a href={media} target="_blank">
+                                    {media}
+                                </a>
+                            </span>
+                            <Input id="document" type="file" onChange={(e) => handleFileSelect(e.target.files)} />
                         </div>
                         <div className="flex justify-end gap-4">
                             <Button variant="secondary" type="reset" disabled={processing}>

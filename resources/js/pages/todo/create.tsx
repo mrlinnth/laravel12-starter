@@ -2,6 +2,7 @@ import InputError from '@/components/input-error';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem } from '@/types';
 import { Head, useForm } from '@inertiajs/react';
@@ -10,9 +11,8 @@ import { FormEventHandler } from 'react';
 // Dummy interface
 // Update your types file and import from it
 type Todo = {
-    id?: number;
     name: string;
-    created_at?: string;
+    content: string;
     document?: File | null;
 };
 
@@ -30,12 +30,12 @@ const breadcrumbs: BreadcrumbItem[] = [
 export default function TodoCreate() {
     const { data, setData, post, reset, errors, processing } = useForm<Todo>({
         name: '',
+        content: '',
         document: null,
     });
 
     const handleFileSelect = (files: FileList | null) => {
         const doc = files ? files[0] : null;
-        console.log('doc: ', doc);
 
         if (doc) {
             setData('document', doc);
@@ -65,14 +65,24 @@ export default function TodoCreate() {
                                 value={data.name}
                                 onChange={(e) => setData('name', e.target.value)}
                                 required
-                                placeholder="Moe Moe"
+                                placeholder="Buy egg"
                                 autoFocus={true}
                             />
                             <InputError className="mt-2" message={errors.name} />
                         </div>
                         <div className="grid grid-flow-row gap-2">
-                            <Label htmlFor="image">Upload*</Label>
-                            <Input id="image" type="file" onChange={(e) => handleFileSelect(e.target.files)} required />
+                            <Label htmlFor="name">Content</Label>
+                            <Textarea
+                                id="content"
+                                value={data.content}
+                                onChange={(e) => setData('content', e.target.value)}
+                                placeholder="Need 4 or 5 eggs for tomorrow breakfast"
+                            />
+                            <InputError className="mt-2" message={errors.content} />
+                        </div>
+                        <div className="grid grid-flow-row gap-2">
+                            <Label htmlFor="document">Upload</Label>
+                            <Input id="document" type="file" onChange={(e) => handleFileSelect(e.target.files)} />
                         </div>
                         <div className="flex justify-end gap-4">
                             <Button variant="secondary" type="reset" disabled={processing}>

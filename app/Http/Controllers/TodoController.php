@@ -20,7 +20,7 @@ class TodoController extends Controller
         $todos = Todo::all();
 
         return Inertia::render('todo/index', [
-            'todos' => $todos,
+            'todos' => $todos->load('creator'),
         ]);
     }
 
@@ -39,10 +39,11 @@ class TodoController extends Controller
         );
         $todo = Todo::create($data);
 
-        // upload file and save to media
-        $path = $request->document->store('todos');
-        $todo->addMediaFromDisk($path, 'local')->toMediaCollection();
-
+        if ($request->hasFile('document')) {
+            // upload file and save to media
+            $path = $request->document->store('todos');
+            $todo->addMediaFromDisk($path, 'local')->toMediaCollection();
+        }
         $request->session()->flash('todo.id', $todo->id);
 
         return redirect()->route('todos.index');
@@ -51,8 +52,8 @@ class TodoController extends Controller
     public function show(Request $request, Todo $todo): Response
     {
         return Inertia::render('todo/show', [
-            'todo' => $todo,
-            'document' => $todo->getFirstMediaUrl(),
+            'todo' => $todo->load('creator'),
+            'media' => $todo->getFirstMediaUrl(),
         ]);
     }
 
@@ -60,6 +61,7 @@ class TodoController extends Controller
     {
         return Inertia::render('todo/edit', [
             'todo' => $todo,
+            'media' => $todo->getFirstMediaUrl(),
         ]);
     }
 
