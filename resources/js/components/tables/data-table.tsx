@@ -25,7 +25,11 @@ import {
 import { ChevronDown, MoreHorizontal } from 'lucide-react';
 import React from 'react';
 
-export function DataTableActions({ routePrefix, routeParam }: { routePrefix: string; routeParam: any }) {
+type ActionsProp = {
+    routePrefix: string;
+    routeParam: { [key: string]: number | string | undefined };
+};
+export function DataTableActions({ routePrefix, routeParam }: ActionsProp) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -57,7 +61,12 @@ export function DataTableActions({ routePrefix, routeParam }: { routePrefix: str
     );
 }
 
-export function DataTable({ data, columns }: { data: any; columns: ColumnDef<any>[] }) {
+type TableProps = {
+    data: unknown[];
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    columns: ColumnDef<any>[];
+};
+export function DataTable({ data, columns }: TableProps) {
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]);
     const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({});

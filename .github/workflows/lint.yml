@@ -27,16 +27,18 @@ jobs:
       - name: Install Dependencies
         run: |
           composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-          npm install
+          npm install --global corepack@latest
+          corepack enable pnpm
+          pnpm install
 
       - name: Run Pint
         run: vendor/bin/pint
 
       - name: Format Frontend
-        run: npm run format
+        run: pnpm format
 
       - name: Lint Frontend
-        run: npm run lint
+        run: pnpm lint
 
       # - name: Commit Changes
       #   uses: stefanzweifel/git-auto-commit-action@v5

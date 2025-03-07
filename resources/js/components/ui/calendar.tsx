@@ -302,7 +302,7 @@ function Nav({
         return !nextMonth;
     })();
 
-    const handlePreviousClick = React.useCallback(() => {
+    const handlePreviousClick = () => {
         if (!previousMonth) return;
         if (navView === "years") {
             setDisplayYears((prev) => ({
@@ -320,9 +320,9 @@ function Nav({
         }
         goToMonth(previousMonth);
         onPrevClick?.(previousMonth);
-    }, [previousMonth, goToMonth]);
+    };
 
-    const handleNextClick = React.useCallback(() => {
+    const handleNextClick = () => {
         if (!nextMonth) return;
         if (navView === "years") {
             setDisplayYears((prev) => ({
@@ -340,7 +340,8 @@ function Nav({
         }
         goToMonth(nextMonth);
         onNextClick?.(nextMonth);
-    }, [goToMonth, nextMonth]);
+    };
+
     return (
         <nav className={cn("flex items-center", className)}>
             <Button

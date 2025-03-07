@@ -16,7 +16,7 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 export default function Playground({ users, roles }: { users: User[]; roles: string[] }) {
-    const [item, setItem] = React.useState<Option | undefined>();
+    const [user, setUser] = React.useState<Option | undefined>();
     const [date, setDate] = React.useState<Date | undefined>();
     const [role, setRole] = React.useState<string>('');
 
@@ -37,8 +37,8 @@ export default function Playground({ users, roles }: { users: User[]; roles: str
                     <TabsContent value="experiment">
                         <div className="grid grid-cols-3 gap-10">
                             <div className="box">
-                                <SmartSelect options={userOptions} item={item} setItem={setItem} />
-                                <BlockJson data={item} />
+                                <SmartSelect options={userOptions} item={user} setItem={(v) => setUser(v)} />
+                                <BlockJson data={user} />
                             </div>
                             <div className="box">
                                 <DatePicker date={date} setDate={(v) => setDate(v)} />

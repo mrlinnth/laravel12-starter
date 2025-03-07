@@ -38,7 +38,9 @@ export default function SmartSelect({
                                     key={option.value}
                                     value={option.label}
                                     onSelect={() => {
-                                        if (item && item.value !== option.value) {
+                                        if (item && item.value === option.value) {
+                                            setItem(undefined);
+                                        } else {
                                             setItem(option);
                                         }
                                         setOpen(false);
