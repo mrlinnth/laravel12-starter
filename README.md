@@ -1,6 +1,7 @@
 # Laravel 12 starter template
 
 > ⚠️ **ATTENTION** This is a starter template. Clone or fork this repo. Develop and commit in a new repo. Do not commit to this repo. ‼️
+> 🆘 **WARNING** Repo is still work in progress. Check the to-do list for current status. ‼️
 
 ## Requirements
 
@@ -23,8 +24,6 @@
 1. run `php artisan migrate:refresh --seed`
 1. run `pnpm install`
 1. run `pnpm dev` for local development or `pnpm build` for deployment
-
-> 🆘 **WARNING** Repo is still work in progress. Check the to-do list for current status. ‼️
 
 ## To Do
 
@@ -78,7 +77,7 @@ laravel12-starter
 ├── app
 │   ├── Console
 │   │   └── Commands
-│   │       └── ShadcnCrud.php _(Custom command to generate React CRUD pages)_
+│   │       └── ShadcnCrud.php (Custom command to generate React CRUD pages)
 │   ├── Enums
 │   ├── Exports
 │   ├── Http
@@ -98,11 +97,11 @@ laravel12-starter
 │   └── seeders
 ├── public
 ├── resources
-│   ├── boilerplates _(Templates for custom file generate)_
+│   ├── boilerplates (Templates for custom file generate)
 │   ├── css
 │   ├── js
 │   │   ├── components
-│   │   │   └── ui _(Shadcn components)_
+│   │   │   └── ui (Shadcn components)
 │   │   ├── hooks
 │   │   ├── layouts
 │   │   ├── lib
