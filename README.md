@@ -73,49 +73,49 @@
 
 ### Project Structore
 
-laravel12-starter/
-|-- app/
-|   |-- Console/
-|   |   `-- Commands/
-|   |       `-- ShadcnCrud.php _(Custom command to generate React CRUD pages)_
-|   |-- Enums
-|   |-- Exports
-|   |-- Http/
-|   |   |-- Controllers/
-|   |   |   |-- Auth
-|   |   |   |-- Settings
-|   |   |   `-- PlaygroundController.php
-|   |   `-- Requests
-|   |-- Models
-|   |-- Policies
-|   `-- Providers
-|-- bootstrap
-|-- config
-|-- database/
-|   |-- factories
-|   |-- migrations
-|   `-- seeders
-|-- public
-|-- resources/
-|   |-- boilerplates _(Templates for custom file generate)_
-|   |-- css
-|   |-- js/
-|   |   |-- components/
-|   |   |   `-- ui _(Shadcn components)_
-|   |   |-- hooks
-|   |   |-- layouts
-|   |   |-- lib
-|   |   |-- pages/
-|   |   |   |-- auth
-|   |   |   |-- settings
-|   |   |   |-- dashboard.tsx
-|   |   |   `-- welcome.tsx
-|   |   |-- types
-|   |   `-- app.tsx
-|   `-- views
-|-- routes/
-|   `-- web.php
-`-- storage
+laravel12-starter
+├── app
+│   ├── Console
+│   │   └── Commands
+│   │       └── ShadcnCrud.php _(Custom command to generate React CRUD pages)_
+│   ├── Enums
+│   ├── Exports
+│   ├── Http
+│   │   ├── Controllers
+│   │   │   ├── Auth
+│   │   │   ├── Settings
+│   │   │   └── PlaygroundController.php
+│   │   └── Requests
+│   ├── Models
+│   ├── Policies
+│   └── Providers
+├── bootstrap
+├── config
+├── database
+│   ├── factories
+│   ├── migrations
+│   └── seeders
+├── public
+├── resources
+│   ├── boilerplates _(Templates for custom file generate)_
+│   ├── css
+│   ├── js
+│   │   ├── components
+│   │   │   └── ui _(Shadcn components)_
+│   │   ├── hooks
+│   │   ├── layouts
+│   │   ├── lib
+│   │   ├── pages
+│   │   │   ├── auth
+│   │   │   ├── settings
+│   │   │   ├── dashboard.tsx
+│   │   │   └── welcome.tsx
+│   │   ├── types
+│   │   └── app.tsx
+│   └── views
+├── routes
+│   └── web.php
+└── storage
 
 ### Default users
 
