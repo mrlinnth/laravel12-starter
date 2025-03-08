@@ -71,8 +71,9 @@
 
 ## Tips
 
-### Project Structore
+### Project Structure
 
+```txt
 laravel12-starter
 ├── app
 │   ├── Console
@@ -116,6 +117,7 @@ laravel12-starter
 ├── routes
 │   └── web.php
 └── storage
+```
 
 ### Default users
 
