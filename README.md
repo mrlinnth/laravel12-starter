@@ -24,6 +24,20 @@
 1. run `pnpm install`
 1. run `pnpm dev` for local development or `pnpm build` for deployment
 
+> 🆘 **WARNING** Repo is still work in progress. Check the to-do list for current status. ‼️
+
+## To Do
+
+- [x] generate basic React CRUD pages
+- [x] to do CRUD with spatie media upload
+- [x] role CRUD
+- [x] user CRUD with role
+- [x] example for Authorization based on role and permission
+- [ ] prefix sub-directory (eg: admin, frontend) with generate commands
+- [ ] one command to generate both backend and frontend files
+- [ ] impersonate as a user
+- [ ] example REST api endpoint and usage in React code
+
 ## Use
 
 - [Laravel v12](https://laravel.com/docs/12.x)
@@ -57,6 +71,52 @@
 
 ## Tips
 
+### Project Structore
+
+laravel12-starter/
+|-- app/
+|   |-- Console/
+|   |   `-- Commands/
+|   |       `-- ShadcnCrud.php _(Custom command to generate React CRUD pages)_
+|   |-- Enums
+|   |-- Exports
+|   |-- Http/
+|   |   |-- Controllers/
+|   |   |   |-- Auth
+|   |   |   |-- Settings
+|   |   |   `-- PlaygroundController.php
+|   |   `-- Requests
+|   |-- Models
+|   |-- Policies
+|   `-- Providers
+|-- bootstrap
+|-- config
+|-- database/
+|   |-- factories
+|   |-- migrations
+|   `-- seeders
+|-- public
+|-- resources/
+|   |-- boilerplates _(Templates for custom file generate)_
+|   |-- css
+|   |-- js/
+|   |   |-- components/
+|   |   |   `-- ui _(Shadcn components)_
+|   |   |-- hooks
+|   |   |-- layouts
+|   |   |-- lib
+|   |   |-- pages/
+|   |   |   |-- auth
+|   |   |   |-- settings
+|   |   |   |-- dashboard.tsx
+|   |   |   `-- welcome.tsx
+|   |   |-- types
+|   |   `-- app.tsx
+|   `-- views
+|-- routes/
+|   `-- web.php
+`-- storage
+
 ### Default users
 
 | Name         | Login Email      | Password | Role    | Permissions               |
@@ -72,16 +132,21 @@
 
 ### Basic Workflow
 
-#### For new entity (eg: Comment)
+> 💡 **Advice** Copy and paste existing file/directory. Find and replace. Voila.
+
+#### Backend - For new entity (eg: Comment)
 
 1. Generate migration, seeder, model, controller, request files using blueprint for your entity (refer to `draft.yaml.example` and create your own `draft.yaml`)
 1. Delete blueprint generated view direcotry under `resources/views`
 1. Update blueprint generated controller file to return `Inertia::render` instead of blade `view`
 1. Update `routes/web.php`
 1. Make changes to other blueprint generated files if necessary
+1. Run `php artisan migrate:refresh --seed`
+
+#### Frontend - For new entity (eg: Comment)
+
 1. Generate react crud files using `php artisan make:shadcn-crud comment` (custom artisan command which uses Laravel File Generator package)
 1. Make necessary changes to generated react crud files
-1. Run `php artisan migrate:refresh --seed`
 1. Update `resources/js/components/app-sidebar.tsx` with new route
 
 #### If you already have migration file (eg: Role)
