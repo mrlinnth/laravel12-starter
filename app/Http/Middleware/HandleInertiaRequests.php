@@ -44,6 +44,7 @@ class HandleInertiaRequests extends Middleware
             'quote' => ['message' => trim($message), 'author' => trim($author)],
             'auth' => [
                 'user' => $request->user(),
+                'is_impersonating' => $request->user() !== null ? $request->user()->isImpersonated() : false,
             ],
         ];
     }

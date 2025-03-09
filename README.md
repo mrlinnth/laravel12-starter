@@ -1,7 +1,20 @@
 # Laravel 12 starter template
 
-> ⚠️ **ATTENTION** This is a starter template. Clone or fork this repo. Develop and commit in a new repo. Do not commit to this repo. ‼️
 > 🆘 **WARNING** Repo is still work in progress. Check the to-do list for current status. ‼️
+
+## To Do
+
+- [x] generate basic React CRUD pages
+- [x] to do CRUD with spatie media upload
+- [x] role CRUD
+- [x] user CRUD with role
+- [x] example for Authorization based on role and permission
+- [ ] prefix sub-directory (eg: admin, frontend) with generate commands
+- [ ] one command to generate both backend and frontend files
+- [x] impersonate as a user
+- [ ] example REST api endpoint and usage in React code
+
+> ⚠️ **ATTENTION** This is a starter template. Clone or fork this repo. Develop and commit in a new repo. Do not commit to this repo. ‼️
 
 ## Requirements
 
@@ -24,18 +37,6 @@
 1. run `php artisan migrate:refresh --seed`
 1. run `pnpm install`
 1. run `pnpm dev` for local development or `pnpm build` for deployment
-
-## To Do
-
-- [x] generate basic React CRUD pages
-- [x] to do CRUD with spatie media upload
-- [x] role CRUD
-- [x] user CRUD with role
-- [x] example for Authorization based on role and permission
-- [ ] prefix sub-directory (eg: admin, frontend) with generate commands
-- [ ] one command to generate both backend and frontend files
-- [ ] impersonate as a user
-- [ ] example REST api endpoint and usage in React code
 
 ## Use
 

@@ -6,7 +6,7 @@ import AppLayout from '@/layouts/app-layout';
 import { BreadcrumbItem } from '@/types';
 import { Head, Link } from '@inertiajs/react';
 import { ColumnDef } from '@tanstack/react-table';
-import { ArrowUpDown } from 'lucide-react';
+import { ArrowUpDown, LogInIcon } from 'lucide-react';
 
 // Dummy interface
 // Update your types file and import from it
@@ -67,9 +67,21 @@ const columns: ColumnDef<User>[] = [
         cell: ({ row }) => <div className="">{row.getValue('email')}</div>,
     },
     {
-        accessorKey: 'created_at',
-        header: 'Created At',
-        cell: ({ row }) => <div className="">{row.getValue('created_at')}</div>,
+        accessorKey: 'main_role',
+        header: 'Role',
+        cell: ({ row }) => <div className="">{row.getValue('main_role')}</div>,
+    },
+    {
+        accessorKey: 'impersonate',
+        header: 'Impersonate',
+        cell: ({ row }) =>
+            row.getValue('main_role') === 'user' && (
+                <Button variant="outline" asChild>
+                    <Link href={route('impersonate', { id: row.original.id })}>
+                        <LogInIcon />
+                    </Link>
+                </Button>
+            ),
     },
     {
         id: 'actions',

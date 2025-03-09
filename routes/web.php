@@ -30,5 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 });
 
+Route::impersonate();
+
 require __DIR__.'/settings.php';
 require __DIR__.'/auth.php';

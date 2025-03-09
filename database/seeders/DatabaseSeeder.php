@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Todo;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -25,11 +26,16 @@ class DatabaseSeeder extends Seeder
         $this->createManager();
 
         // create test user
-        $this->createTestUser();
+        $user = $this->createTestUser();
 
         // seed dummy data
+        Todo::factory()
+            ->count(5)
+            ->for($user, 'creator')
+            ->create();
+
         $this->call([
-            TodoSeeder::class,
+            // TodoSeeder::class,
         ]);
     }
 
@@ -75,16 +81,20 @@ class DatabaseSeeder extends Seeder
         $user->assignRole($roleName);
     }
 
-    // user with direct read permission
-    protected function createTestUser(): void
+    // user with read permission
+    protected function createTestUser(): User
     {
+        $role = Role::create(['name' => 'user']);
+        $role->givePermissionTo('read');
+
         // create user
         $user = User::factory()->create([
             'name' => 'Test User',
             'email' => 'user@mail.com',
             'password' => Hash::make('password'),
         ]);
+        $user->assignRole($role);
 
-        $user->givePermissionTo('read');
+        return $user;
     }
 }

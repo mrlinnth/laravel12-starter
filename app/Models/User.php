@@ -9,14 +9,14 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Lab404\Impersonate\Models\Impersonate;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, HasRoles, LogsActivity, Notifiable;
+    use HasFactory, HasRoles, Impersonate, LogsActivity, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -99,5 +99,15 @@ class User extends Authenticatable
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults();
+    }
+
+    public function canImpersonate()
+    {
+        return $this->is_super_admin || $this->hasRole('manager');
+    }
+
+    public function canBeImpersonated()
+    {
+        return $this->hasRole('user');
     }
 }
