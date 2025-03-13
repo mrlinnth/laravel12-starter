@@ -12,7 +12,7 @@
 - [ ] prefix sub-directory (eg: admin, frontend) with generate commands
 - [ ] one command to generate both backend and frontend files
 - [x] impersonate as a user
-- [ ] example REST api endpoint and usage in React code
+- [x] example REST api endpoint and usage in React code
 
 > ⚠️ **ATTENTION** This is a starter template. Clone or fork this repo. Develop and commit in a new repo. Do not commit to this repo. ‼️
 
@@ -171,3 +171,20 @@ laravel12-starter
 - for frontend authorization, check `resources/js/components/buttons/create-btn.tsx`, Create button is hidden for user without `create` permission
 - for backend authorization, check `app/Policies/TodoPolicy.php` TodoPolicy class `update` method and `app/Http/Controllers/TodoController.php` TodoController class `edit` and `update` methods
 - `secret` route in `routes/web.php` is available only to super admin user
+
+### Generate CRUD API for an entity
+
+- Check `app\Http\Controllers\Api\UserController.php` Api/UserController and [Orion documentation](https://orion.tailflow.org/)
+
+### Custom action API
+
+- Check `app\Http\Controllers\Api\TodoStatusController.php` Api/TodoStatusController
+- Must follow Orion Response object structure to have a consistant API responses
+
+### Fetch data using API at Frontend
+
+- Check `resources\js\components\inputs\country-select.tsx` CountrySelect component and `/playground` page
+
+### Submit data using API at Frontend
+
+- Check `resources\js\components\todo\todo-status-dropdown.tsx` TodoStatusDropdown component and `/todos` page

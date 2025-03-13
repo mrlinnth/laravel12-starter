@@ -1,6 +1,7 @@
 import { CreateBtn } from '@/components/buttons/create-btn';
 import { ExportBtn } from '@/components/buttons/export-btn';
 import { DataTable, DataTableActions } from '@/components/tables/data-table';
+import { TodoStatusDropdown } from '@/components/todo/todo-status-dropdown';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import AppLayout from '@/layouts/app-layout';
@@ -66,7 +67,13 @@ const columns: ColumnDef<Todo>[] = [
     {
         accessorKey: 'status',
         header: 'Status',
-        cell: ({ row }) => <div className="">{row.getValue('status')}</div>,
+        cell: ({ row }) => {
+            return (
+                <div className="">
+                    <TodoStatusDropdown id={Number(row.original.id)} status={row.original.status} />
+                </div>
+            );
+        },
     },
     {
         accessorKey: 'creator',
