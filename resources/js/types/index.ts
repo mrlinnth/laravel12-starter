@@ -12,14 +12,15 @@ export interface BreadcrumbItem {
 
 export interface NavGroup {
     title: string;
-    items: NavItem[];
+    url: string;
+    icon?: LucideIcon | null;
+    subItems?: NavItem[];
 }
 
 export interface NavItem {
     title: string;
     url: string;
     icon?: LucideIcon | null;
-    isActive?: boolean;
 }
 
 export type Option = {
