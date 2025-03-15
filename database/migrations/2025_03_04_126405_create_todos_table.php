@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('name', 400);
             $table->text('content')->nullable();
             $table->foreignId('creator_id')->constrained('users');
-            $table->enum('status', array_column(TodoStatusEnum::cases(), 'value'))->default(array_column(TodoStatusEnum::cases(), 'value')[0]);
+            $table->enum('status', TodoStatusEnum::values())->default(TodoStatusEnum::default());
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
             $table->softDeletes();

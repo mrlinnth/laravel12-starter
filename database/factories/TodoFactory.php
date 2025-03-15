@@ -25,7 +25,7 @@ class TodoFactory extends Factory
             'name' => fake()->sentence(1),
             'content' => fake()->paragraphs(3, true),
             'creator_id' => User::factory(),
-            'status' => fake()->randomElement(array_column(TodoStatusEnum::cases(), 'value')),
+            'status' => fake()->randomElement(TodoStatusEnum::values()),
         ];
     }
 }
