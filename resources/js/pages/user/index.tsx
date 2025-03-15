@@ -75,7 +75,7 @@ const columns: ColumnDef<User>[] = [
         accessorKey: 'impersonate',
         header: 'Impersonate',
         cell: ({ row }) =>
-            row.getValue('main_role') === 'user' && (
+            !row.original.is_super_admin && (
                 <Button variant="outline" asChild>
                     <Link href={route('impersonate', { id: row.original.id })}>
                         <LogInIcon />
@@ -89,7 +89,7 @@ const columns: ColumnDef<User>[] = [
         cell: ({ row }) => {
             const param = { user: row.original.id };
 
-            return <DataTableActions routePrefix="users" routeParam={param} />;
+            return !row.original.is_super_admin && <DataTableActions routePrefix="users" routeParam={param} />;
         },
     },
 ];
