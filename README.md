@@ -55,6 +55,7 @@
 - [Laravel Pint](https://laravel.com/docs/12.x/pint)
 - [Laravel Sanctum](https://laravel.com/docs/12.x/sanctum)
 - [Laravel Telescope](https://laravel.com/docs/12.x/telescope)
+- [Laravel Envoy](https://laravel.com/docs/12.x/envoy)
 - [Orion](https://orion.tailflow.org/)
 - [Spatie - Laravel Activity Log](https://spatie.be/docs/laravel-activitylog/v4/introduction)
 - [Spatie - Laravel Media Library](https://spatie.be/docs/laravel-medialibrary/v11/introduction)
